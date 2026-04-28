@@ -36,7 +36,7 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Link href="#contact" scroll={true}>
+              <Link href="/book">
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -46,7 +46,7 @@ const Hero = () => {
                   <span className="text-xl">→</span>
                 </motion.button>
               </Link>
-              <a href="tel:+919876543210">
+              <a href="tel:+919910195029">
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}

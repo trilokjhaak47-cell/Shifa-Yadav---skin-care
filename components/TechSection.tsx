@@ -17,7 +17,7 @@ const techItems = [
       "Minimal discomfort with cooling technology",
       "Helps reduce ingrown hair and improves skin smoothness"
     ],
-    image: "https://picsum.photos/seed/laser-machine/800/600",
+    image: "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777390722/photo_2026-04-28_21-06-58_rkhtjg.jpg",
     bgColor: "bg-brand-cream/20"
   },
   {
@@ -31,7 +31,7 @@ const techItems = [
       "Helps reduce fine lines and uneven tone",
       "Effective solution for tattoo removal"
     ],
-    image: "https://picsum.photos/seed/qswitch-laser/800/600",
+    image: "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777390727/photo_2026-04-28_21-07-00_orbcdp.jpg",
     bgColor: "bg-white"
   },
   {
@@ -45,7 +45,7 @@ const techItems = [
       "No downtime or recovery needed",
       "Gradual and natural-looking results"
     ],
-    image: "https://picsum.photos/seed/hifu-tightening/800/600",
+    image: "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777390730/photo_2026-04-28_21-07-02_j2vovo.jpg",
     bgColor: "bg-brand-cream/20"
   }
 ];
@@ -93,7 +93,7 @@ const TechSection = () => {
                 className="w-full lg:w-1/2 relative group"
               >
                 <div className={`absolute -inset-4 ${item.bgColor} rounded-[2.5rem] -z-10 transition-transform group-hover:scale-105 duration-700`} />
-                <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] shadow-2xl shadow-brand-sand/30 border border-brand-sand/50">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl shadow-brand-sand/30 border border-brand-sand/50">
                   <Image 
                     src={item.image}
                     alt={item.title}

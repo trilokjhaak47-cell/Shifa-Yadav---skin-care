@@ -41,12 +41,13 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-[10px] font-bold uppercase tracking-[.2em] text-brand-muted mb-6">Explore</h4>
+            <h4 className="text-[10px] font-bold uppercase tracking-[.2em] text-brand-muted mb-6">Quick Links</h4>
             <ul className="space-y-4 text-sm font-medium text-brand-brown">
-              <li><Link href="#about" className="hover:text-brand-gold transition-colors">The Clinic</Link></li>
-              <li><Link href="#services" className="hover:text-brand-gold transition-colors">Our Expertise</Link></li>
-              <li><Link href="#results" className="hover:text-brand-gold transition-colors">Patient Results</Link></li>
-              <li><Link href="#faq" className="hover:text-brand-gold transition-colors">Skin FAQ</Link></li>
+              <li><Link href="/" className="hover:text-brand-gold transition-colors">Home</Link></li>
+              <li><Link href="/services" className="hover:text-brand-gold transition-colors">Services</Link></li>
+              <li><Link href="/about" className="hover:text-brand-gold transition-colors">About</Link></li>
+              <li><Link href="/#results" className="hover:text-brand-gold transition-colors">Result</Link></li>
+              <li><Link href="/#testimonials" className="hover:text-brand-gold transition-colors">Testimonials</Link></li>
             </ul>
           </div>
 
@@ -54,10 +55,11 @@ const Footer = () => {
           <div>
             <h4 className="text-[10px] font-bold uppercase tracking-[.2em] text-brand-muted mb-6">Treatments</h4>
             <ul className="space-y-4 text-sm font-medium text-brand-brown">
-              <li>Acne Treatment</li>
-              <li>Hair Restoration</li>
-              <li>Anti-Aging Procedures</li>
-              <li>Laser Therapy</li>
+              <li><Link href="/services" className="hover:text-brand-gold transition-colors">Skin Treatments</Link></li>
+              <li><Link href="/services" className="hover:text-brand-gold transition-colors">Hair Treatments</Link></li>
+              <li><Link href="/services" className="hover:text-brand-gold transition-colors">Laser & Removal</Link></li>
+              <li><Link href="/services" className="hover:text-brand-gold transition-colors">Aesthetic Treatments</Link></li>
+              <li><Link href="/services" className="hover:text-brand-gold transition-colors">Advanced Procedures</Link></li>
             </ul>
           </div>
 
@@ -65,8 +67,8 @@ const Footer = () => {
           <div>
             <h4 className="text-[10px] font-bold uppercase tracking-[.2em] text-brand-muted mb-6">Location</h4>
             <p className="text-sm font-bold text-brand-brown mb-2 uppercase tracking-wide">Gurugram Center</p>
-            <p className="text-sm text-brand-text-light mb-4">
-              Sector 42, Golf Course Road<br/>Gurugram, Haryana 122002
+            <p className="text-sm text-brand-text-light mb-4 text-pretty tabular-nums">
+              H NO. 764, Sector 17-A, Gurugram,<br/>Haryana, Near HUDA Market
             </p>
             <div className="flex items-center space-x-2 text-[10px] font-bold text-brand-gold uppercase tracking-[.2em]">
               <div className="w-2 h-2 bg-brand-gold rounded-full animate-pulse"></div>

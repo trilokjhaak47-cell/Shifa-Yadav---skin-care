@@ -289,16 +289,16 @@ const ServiceCard = ({ title, desc, tags, details }: { title: string, desc: stri
     <motion.div 
       layout
       whileHover={!isDetailsOpen ? { y: -5 } : {}}
-      className={`bg-white p-6 rounded-2xl border transition-all duration-300 flex flex-col items-start gap-2 ${isDetailsOpen ? 'border-brand-gold shadow-xl' : 'border-brand-sand/50 shadow-sm hover:shadow-xl hover:shadow-brand-sand/30'}`}
+      className={`bg-white p-6 rounded-2xl border transition-all duration-300 flex flex-col h-full ${isDetailsOpen ? 'border-brand-gold shadow-xl' : 'border-brand-sand/50 shadow-sm hover:shadow-xl hover:shadow-brand-sand/30'}`}
     >
-      <div className="flex justify-between items-start w-full">
-        <div className="w-8 h-8 rounded-lg bg-brand-cream/50 flex items-center justify-center text-brand-gold">
+      <div className="flex justify-between items-center w-full mb-4">
+        <div className="shrink-0 w-8 h-8 rounded-lg bg-brand-cream/50 flex items-center justify-center text-brand-gold">
           <Sparkles size={16} />
         </div>
         {tags && (
-          <div className="flex flex-wrap gap-2 justify-end max-w-[50%]">
+          <div className="flex gap-2 overflow-x-auto no-scrollbar ml-4">
             {tags.map((tag, i) => (
-              <span key={i} className="text-[9px] font-bold text-brand-brown/70 bg-brand-cream px-2 py-1 rounded-full whitespace-nowrap">
+              <span key={i} className="text-[9px] font-bold text-brand-brown/70 bg-brand-cream px-2 py-1 rounded-full whitespace-nowrap shrink-0">
                 {tag}
               </span>
             ))}
@@ -306,8 +306,10 @@ const ServiceCard = ({ title, desc, tags, details }: { title: string, desc: stri
         )}
       </div>
 
-      <h4 className="text-brand-dark font-bold text-lg mt-2">{title}</h4>
-      <p className="text-brand-text-light text-sm leading-relaxed mb-2">{desc}</p>
+      <div className="flex-grow flex flex-col">
+        <h4 className="text-brand-dark font-bold text-lg">{title}</h4>
+        <p className="text-brand-text-light text-sm leading-relaxed mb-4">{desc}</p>
+      </div>
       
       <AnimatePresence>
         {isDetailsOpen && (
@@ -378,6 +380,7 @@ const CategorySection = ({ category }: { category: typeof categories[0] }) => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.2 }}
+              className="h-full"
             >
               <ServiceCard {...service} />
             </motion.div>
@@ -477,7 +480,7 @@ export default function ServicesPage() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link href="/#contact">
+            <Link href="/book">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -488,7 +491,7 @@ export default function ServicesPage() {
               </motion.button>
             </Link>
             
-            <a href="tel:+919876543210">
+            <a href="tel:+919910195029">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -507,7 +510,7 @@ export default function ServicesPage() {
       
       {/* Mobile Sticky CTA */}
       <div className="md:hidden fixed bottom-6 left-6 right-6 z-50">
-        <Link href="/#contact">
+        <Link href="/book">
           <motion.button
             initial={{ y: 100 }}
             animate={{ y: 0 }}

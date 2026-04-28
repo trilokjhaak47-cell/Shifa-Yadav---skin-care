@@ -69,9 +69,9 @@ const ContactSection = () => {
 
             <div className="space-y-8">
               {[
-                { icon: <Phone size={20} />, label: "Phone Number", value: "+91 98765 43210", href: "tel:+919876543210" },
+                { icon: <Phone size={20} />, label: "Phone Number", value: "+91 99101 95029", href: "tel:+919910195029" },
                 { icon: <Mail size={20} />, label: "Email Address", value: "care@drshifayadav.com", href: "mailto:care@drshifayadav.com" },
-                { icon: <MapPin size={20} />, label: "Clinic Address", value: "Sector 42, Golf Course Road, Gurugram, India", href: "https://maps.google.com" },
+                { icon: <MapPin size={20} />, label: "Clinic Address", value: "H NO. 764, Sector 17-A, Gurugram, Haryana, Near HUDA Market", href: "https://maps.google.com" },
                 { icon: <Clock size={20} />, label: "Working Hours", value: "Mon – Sat, 10 AM – 7 PM", href: null }
               ].map((item, i) => (
                 <div key={i} className="flex items-start space-x-5">
@@ -94,7 +94,7 @@ const ContactSection = () => {
 
             <div className="pt-8 border-t border-brand-sand/50 space-y-6">
               <motion.a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/919910195029"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}

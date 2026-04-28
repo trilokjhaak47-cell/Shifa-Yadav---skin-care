@@ -18,11 +18,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
+    { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
     { name: 'Results', href: '/#results' },
     { name: 'Testimonials', href: '/#testimonials' },
-    { name: 'FAQ', href: '/#faq' },
   ];
 
   return (
@@ -57,7 +57,7 @@ const Navbar = () => {
               </Link>
             ))}
             <Link
-              href="/#contact"
+              href="/book"
               className="bg-brand-brown text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-brand-dark transition-all duration-300 shadow-lg shadow-brand-brown/20"
             >
               Book Appointment
@@ -66,7 +66,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-4">
-            <a href="tel:+919999999999" className="p-2 text-brand-brown">
+            <a href="tel:+919910195029" className="p-2 text-brand-brown">
               <Phone className="w-5 h-5" />
             </a>
             <button onClick={() => setIsOpen(!isOpen)} className="p-2 text-brand-brown focus:outline-none">
@@ -98,7 +98,7 @@ const Navbar = () => {
               ))}
               <div className="pt-4 px-3">
                 <Link
-                  href="/#contact"
+                  href="/book"
                   onClick={() => setIsOpen(false)}
                   className="block w-full text-center bg-brand-dark text-white py-4 rounded-xl font-bold shadow-xl shadow-brand-dark/10 active:scale-95 transition-all"
                 >

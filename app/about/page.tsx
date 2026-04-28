@@ -76,7 +76,7 @@ export default function AboutPage() {
               Trusted dermatologist focused on safe, science-backed skin and hair treatments.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/#contact">
+              <Link href="/book">
                 <button className="px-8 py-4 bg-brand-dark text-white rounded-full font-bold text-sm tracking-widest uppercase shadow-xl hover:bg-brand-brown transition-all">
                   Book Consultation
                 </button>
@@ -98,7 +98,7 @@ export default function AboutPage() {
             >
               <div className="relative aspect-[4/5] w-full max-w-md mx-auto lg:mx-0 overflow-hidden rounded-[3rem] shadow-2xl shadow-brand-sand/50 border-[12px] border-white">
                 <Image 
-                  src="https://picsum.photos/seed/dr-shifa-portrait/800/1000"
+                  src="https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777289494/ChatGPTImageApr27202602_17_18A_yi3lxs.jpg"
                   alt="Dr. Shifa Yadav"
                   fill
                   className="object-cover"
@@ -177,14 +177,19 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-serif font-bold text-brand-dark mb-4">Our Clinic</h2>
-            <p className="text-brand-gold font-bold uppercase tracking-[.2em] text-xs mb-6">Located in Gurugram Sector 17</p>
+            <p className="text-brand-gold font-bold uppercase tracking-[.2em] text-xs mb-6">Located in Gurugram Sector 17-A</p>
             <p className="text-brand-text-light text-lg leading-relaxed max-w-3xl mx-auto">
               A clean, modern, and well-equipped clinic environment designed to ensure comfort, safety, and effective treatments for every patient.
             </p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {[1, 2, 3, 4].map((idx) => (
+            {[
+              "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777390728/photo_2026-04-28_21-07-04_rosarm.jpg",
+              "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777390731/photo_2026-04-28_21-07-07_uajhro.jpg",
+              "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777390723/photo_2026-04-28_21-07-12_xxrozx.jpg",
+              "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777390727/photo_2026-04-28_21-07-09_cktynw.jpg"
+            ].map((url, idx) => (
               <motion.div 
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
@@ -194,8 +199,8 @@ export default function AboutPage() {
                 className="relative aspect-square rounded-[2rem] overflow-hidden shadow-lg group"
               >
                 <Image 
-                  src={`https://picsum.photos/seed/clinic-gallery-${idx}/600/600`} 
-                  alt={`Clinic Gallery ${idx}`} 
+                  src={url} 
+                  alt={`Clinic Gallery ${idx + 1}`} 
                   fill 
                   className="object-cover transition-transform duration-700 group-hover:scale-110" 
                   referrerPolicy="no-referrer" 
@@ -242,12 +247,12 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="relative aspect-video w-full rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 group">
+              <div className="relative aspect-video w-full rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 group bg-white/5">
                 <Image 
-                  src="https://picsum.photos/seed/laser-tech/800/600" 
+                  src="https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777392113/photo_2026-04-28_21-31-13_yyj73t.jpg" 
                   alt="Advanced Laser Technology" 
                   fill 
-                  className="object-cover transition-transform duration-1000 group-hover:scale-110" 
+                  className="object-contain p-4 transition-transform duration-1000 group-hover:scale-105" 
                   referrerPolicy="no-referrer" 
                 />
               </div>
@@ -329,7 +334,7 @@ export default function AboutPage() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link href="/#contact">
+            <Link href="/book">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -340,7 +345,7 @@ export default function AboutPage() {
               </motion.button>
             </Link>
             
-            <a href="tel:+919876543210">
+            <a href="tel:+919910195029">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
