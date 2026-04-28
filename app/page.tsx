@@ -9,7 +9,6 @@ import SocialProof from '@/components/SocialProof';
 import FAQ from '@/components/FAQ';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
-import FloatingCTA from '@/components/FloatingCTA';
 import TopBanner from '@/components/TopBanner';
 
 export default function Home() {
@@ -27,7 +26,6 @@ export default function Home() {
       <FAQ />
       <ContactSection />
       <Footer />
-      <FloatingCTA />
     </main>
   );
 }

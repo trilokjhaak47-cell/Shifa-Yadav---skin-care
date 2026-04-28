@@ -15,18 +15,48 @@ const SocialProof = () => {
     // or a service like Behance/Elfsight/etc.
     const fetchPosts = async () => {
       try {
-        // Mock data representing what the API would return
+        // Updated with manual post data
         const mockPosts = [
-          { id: '1', img: "https://picsum.photos/seed/derm1/600/600", link: "https://www.instagram.com/p/C-abc123/", type: "image" },
-          { id: '2', img: "https://picsum.photos/seed/derm2/600/600", link: "https://www.instagram.com/p/C-def456/", type: "video" },
-          { id: '3', img: "https://picsum.photos/seed/derm3/600/600", link: "https://www.instagram.com/p/C-ghi789/", type: "image" },
-          { id: '4', img: "https://picsum.photos/seed/derm4/600/600", link: "https://www.instagram.com/p/C-jkl012/", type: "image" },
-          { id: '5', img: "https://picsum.photos/seed/derm5/600/600", link: "https://www.instagram.com/p/C-mno345/", type: "video" },
-          { id: '6', img: "https://picsum.photos/seed/derm6/600/600", link: "https://www.instagram.com/p/C-pqr678/", type: "image" }
+          { 
+            id: '1', 
+            img: "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777408566/SnapInsta.to_640442587_18573115267063319_6243020657686519392_n_lgauie.jpg", 
+            link: "https://www.instagram.com/p/DVIYzOaEcqJ/", 
+            type: "image" 
+          },
+          { 
+            id: '2', 
+            img: "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777408549/Screenshot_2026-04-29_020446_jszx1n.png", 
+            link: "https://www.instagram.com/reel/DXBZh-8kS_f/", 
+            type: "video" 
+          },
+          { 
+            id: '3', 
+            img: "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777408566/SnapInsta.to_627654922_18566190112063319_7018736670702470918_n_tzxulz.jpg", 
+            link: "https://www.instagram.com/p/DUu-TD5kdLx/", 
+            type: "image" 
+          },
+          { 
+            id: '4', 
+            img: "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777408979/Screenshot_2026-04-29_021236_xyiesa.png", 
+            link: "https://www.instagram.com/reel/DUqIOPtkV6c/", 
+            type: "video" 
+          },
+          { 
+            id: '5', 
+            img: "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777408567/SnapInsta.to_626426717_18562260988063319_6080158698704568215_n_nxcioc.jpg", 
+            link: "https://www.instagram.com/p/DUSfiudkX-e/", 
+            type: "image" 
+          },
+          { 
+            id: '6', 
+            img: "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777408549/Screenshot_2026-04-29_020353_hl5xgc.png", 
+            link: "https://www.instagram.com/reel/DWti4nhkTbo/", 
+            type: "video" 
+          }
         ];
         
-        // Simulating network delay
-        await new Promise(resolve => setTimeout(resolve, 800));
+        // Simulating minor network delay for transition feel
+        await new Promise(resolve => setTimeout(resolve, 500));
         setPosts(mockPosts);
         setLoading(false);
       } catch (error) {
@@ -64,7 +94,7 @@ const SocialProof = () => {
             posts.map((post, i) => (
               <motion.a
                 key={post.id}
-                href="https://www.instagram.com/dermshifayadav/"
+                href={post.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, scale: 0.95 }}

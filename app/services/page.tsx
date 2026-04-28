@@ -22,7 +22,7 @@ import Link from 'next/link';
 
 const categories = [
   {
-    id: "skin",
+    id: "skin-treatments",
     name: "Skin Treatments",
     icon: Sparkles,
     services: [
@@ -79,7 +79,7 @@ const categories = [
     ]
   },
   {
-    id: "hair",
+    id: "hair-treatments",
     name: "Hair Treatments",
     icon: Scissors,
     services: [
@@ -116,7 +116,7 @@ const categories = [
     ]
   },
   {
-    id: "laser",
+    id: "laser-removal",
     name: "Laser & Removal",
     icon: Zap,
     services: [
@@ -190,7 +190,7 @@ const categories = [
     ]
   },
   {
-    id: "advanced",
+    id: "advanced-procedures",
     name: "Advanced Procedures",
     icon: Layers,
     services: [
@@ -507,20 +507,6 @@ export default function ServicesPage() {
       </section>
 
       <Footer />
-      
-      {/* Mobile Sticky CTA */}
-      <div className="md:hidden fixed bottom-6 left-6 right-6 z-50">
-        <Link href="/book">
-          <motion.button
-            initial={{ y: 100 }}
-            animate={{ y: 0 }}
-            className="w-full bg-brand-dark text-white p-4 rounded-2xl font-bold shadow-2xl flex items-center justify-center space-x-3"
-          >
-            <Calendar size={18} />
-            <span>Book Appointment</span>
-          </motion.button>
-        </Link>
-      </div>
     </main>
   );
 }

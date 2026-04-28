@@ -18,37 +18,43 @@ const categories = [
     title: "Skin Treatments",
     icon: Sparkles,
     services: ["Acne scar reduction", "Melasma treatment", "Eczema & Psoriasis", "Allergy & Urticaria"],
-    color: "bg-pink-50/50"
+    color: "bg-pink-50/50",
+    href: "/services#skin-treatments"
   },
   {
     title: "Hair Treatments",
     icon: Scissors,
     services: ["Hair PRP", "Hair Mesotherapy", "Hair fall consultation"],
-    color: "bg-emerald-50/50"
+    color: "bg-emerald-50/50",
+    href: "/services#hair-treatments"
   },
   {
     title: "Laser & Removal",
     icon: Zap,
     services: ["Laser hair removal", "Tattoo removal", "Mole & skin tag removal"],
-    color: "bg-blue-50/50"
+    color: "bg-blue-50/50",
+    href: "/services#laser-removal"
   },
   {
     title: "Aesthetic & Anti-Aging",
     icon: FlaskConical,
     services: ["Botox & Fillers", "Thread lift", "Skin boosters (PDRN, Exosomes)"],
-    color: "bg-purple-50/50"
+    color: "bg-purple-50/50",
+    href: "/services#aesthetic"
   },
   {
     title: "Advanced Procedures",
     icon: Layers,
     services: ["Chemical peeling", "HIFU (skin tightening)", "Radio frequency tightening", "Body & face tightening"],
-    color: "bg-orange-50/50"
+    color: "bg-orange-50/50",
+    href: "/services#advanced-procedures"
   },
   {
     title: "Specialized Treatments",
     icon: Microscope,
     services: ["Nail surgery", "Electrosurgery", "NB-UVB therapy", "Vitiligo treatment"],
-    color: "bg-slate-50/50"
+    color: "bg-slate-50/50",
+    href: "/services#specialized"
   }
 ];
 
@@ -73,7 +79,7 @@ const Services = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               whileHover={{ y: -8, scale: 1.01 }}
-              className="group bg-brand-cream/10 p-8 rounded-2xl border border-brand-sand/50 shadow-sm hover:shadow-xl hover:shadow-brand-sand/20 transition-all duration-300 flex flex-col items-start text-left"
+              className="group bg-brand-cream/10 p-8 rounded-2xl border border-brand-sand/50 shadow-sm hover:shadow-xl hover:shadow-brand-sand/20 transition-all duration-300 flex flex-col items-center text-center md:items-start md:text-left"
             >
               <div className={`w-14 h-14 rounded-2xl ${cat.color} flex items-center justify-center text-brand-brown mb-6 group-hover:scale-110 transition-transform duration-500`}>
                 <cat.icon size={26} className="text-brand-gold" />
@@ -83,17 +89,17 @@ const Services = () => {
               
               <ul className="space-y-3 mb-8 flex-grow">
                 {cat.services.map((service, si) => (
-                  <li key={si} className="flex items-start gap-2 text-brand-text-light text-sm">
+                   <li key={si} className="flex items-start md:items-start gap-2 text-brand-text-light text-sm text-left">
                     <div className="w-1 h-1 rounded-full bg-brand-gold mt-2 shrink-0" />
                     <span>{service}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="flex items-center text-brand-brown font-bold text-xs uppercase tracking-widest group-hover:text-brand-gold transition-colors">
+              <Link href={cat.href} className="flex items-center text-brand-brown font-bold text-xs uppercase tracking-widest group-hover:text-brand-gold transition-colors">
                 <span>Learn More</span>
                 <ChevronRight size={14} className="ml-1 group-hover:translate-x-1 transition-transform" />
-              </div>
+              </Link>
             </motion.div>
           ))}
         </div>

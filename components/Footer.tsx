@@ -39,28 +39,32 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-[10px] font-bold uppercase tracking-[.2em] text-brand-muted mb-6">Quick Links</h4>
-            <ul className="space-y-4 text-sm font-medium text-brand-brown">
-              <li><Link href="/" className="hover:text-brand-gold transition-colors">Home</Link></li>
-              <li><Link href="/services" className="hover:text-brand-gold transition-colors">Services</Link></li>
-              <li><Link href="/about" className="hover:text-brand-gold transition-colors">About</Link></li>
-              <li><Link href="/#results" className="hover:text-brand-gold transition-colors">Result</Link></li>
-              <li><Link href="/#testimonials" className="hover:text-brand-gold transition-colors">Testimonials</Link></li>
-            </ul>
-          </div>
+          {/* Grouped Links for mobile side-by-side */}
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-2 md:gap-12 lg:contents">
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-[10px] font-bold uppercase tracking-[.2em] text-brand-muted mb-6">Quick Links</h4>
+              <ul className="space-y-4 text-sm font-medium text-brand-brown">
+                <li><Link href="/" className="hover:text-brand-gold transition-colors">Home</Link></li>
+                <li><Link href="/services" className="hover:text-brand-gold transition-colors">Services</Link></li>
+                <li><Link href="/about" className="hover:text-brand-gold transition-colors">About</Link></li>
+                <li><Link href="/contact" className="hover:text-brand-gold transition-colors">Contact Us</Link></li>
+                <li><Link href="/#results" className="hover:text-brand-gold transition-colors">Result</Link></li>
+                <li><Link href="/#testimonials" className="hover:text-brand-gold transition-colors">Testimonials</Link></li>
+              </ul>
+            </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="text-[10px] font-bold uppercase tracking-[.2em] text-brand-muted mb-6">Treatments</h4>
-            <ul className="space-y-4 text-sm font-medium text-brand-brown">
-              <li><Link href="/services" className="hover:text-brand-gold transition-colors">Skin Treatments</Link></li>
-              <li><Link href="/services" className="hover:text-brand-gold transition-colors">Hair Treatments</Link></li>
-              <li><Link href="/services" className="hover:text-brand-gold transition-colors">Laser & Removal</Link></li>
-              <li><Link href="/services" className="hover:text-brand-gold transition-colors">Aesthetic Treatments</Link></li>
-              <li><Link href="/services" className="hover:text-brand-gold transition-colors">Advanced Procedures</Link></li>
-            </ul>
+            {/* Services */}
+            <div>
+              <h4 className="text-[10px] font-bold uppercase tracking-[.2em] text-brand-muted mb-6">Treatments</h4>
+              <ul className="space-y-4 text-sm font-medium text-brand-brown">
+                <li><Link href="/services" className="hover:text-brand-gold transition-colors">Skin Treatments</Link></li>
+                <li><Link href="/services" className="hover:text-brand-gold transition-colors">Hair Treatments</Link></li>
+                <li><Link href="/services" className="hover:text-brand-gold transition-colors">Laser & Removal</Link></li>
+                <li><Link href="/services" className="hover:text-brand-gold transition-colors">Aesthetic Treatments</Link></li>
+                <li><Link href="/services" className="hover:text-brand-gold transition-colors">Advanced Procedures</Link></li>
+              </ul>
+            </div>
           </div>
 
           {/* Location Summary */}

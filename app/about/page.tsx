@@ -20,6 +20,39 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useInView, animate } from 'motion/react';
+
+const Counter = ({ value, label, icon: Icon }: { value: string, label: string, icon: any }) => {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const [displayValue, setDisplayValue] = React.useState(0);
+  
+  React.useEffect(() => {
+    if (isInView) {
+      const numericValue = parseInt(value.replace(/\D/g, ''));
+      const controls = animate(0, numericValue, {
+        duration: 1.5,
+        ease: "easeOut",
+        onUpdate: (latest) => setDisplayValue(Math.floor(latest))
+      });
+      return () => controls.stop();
+    }
+  }, [isInView, value]);
+
+  const suffix = value.replace(/[0-9]/g, '');
+
+  return (
+    <div ref={ref} className="text-center group">
+      <div className="w-12 h-12 rounded-full bg-brand-cream flex items-center justify-center text-brand-gold mx-auto mb-4 group-hover:scale-110 transition-transform">
+        <Icon size={24} />
+      </div>
+      <div className="text-3xl font-bold text-brand-dark mb-1">
+        {displayValue}{suffix}
+      </div>
+      <div className="text-xs font-bold text-brand-gold uppercase tracking-widest">{label}</div>
+    </div>
+  );
+};
 
 export default function AboutPage() {
   const stats = [
@@ -306,13 +339,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, i) => (
-              <div key={i} className="text-center group">
-                <div className="w-12 h-12 rounded-full bg-brand-cream flex items-center justify-center text-brand-gold mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <stat.icon size={24} />
-                </div>
-                <div className="text-3xl font-bold text-brand-dark mb-1">{stat.value}</div>
-                <div className="text-xs font-bold text-brand-gold uppercase tracking-widest">{stat.label}</div>
-              </div>
+              <Counter key={i} {...stat} />
             ))}
           </div>
         </div>
