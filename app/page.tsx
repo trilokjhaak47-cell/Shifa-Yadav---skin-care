@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Services from '@/components/Services';
+import TechSection from '@/components/TechSection';
 import BeforeAfter from '@/components/BeforeAfter';
 import Testimonials from '@/components/Testimonials';
 import SocialProof from '@/components/SocialProof';
@@ -19,6 +20,7 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
+      <TechSection />
       <BeforeAfter />
       <Testimonials />
       <SocialProof />
