@@ -4,10 +4,12 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Phone } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +26,12 @@ const Navbar = () => {
     { name: 'Contact Us', href: '/contact' },
     { name: 'Results', href: '/#results' },
   ];
+
+  const isActive = (href: string) => {
+    if (href === '/' && pathname === '/') return true;
+    if (href !== '/' && pathname.startsWith(href)) return true;
+    return false;
+  };
 
   return (
     <nav
@@ -47,15 +55,27 @@ const Navbar = () => {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-sm font-medium text-brand-muted hover:text-brand-gold transition-colors"
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const active = isActive(link.href);
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`text-sm font-semibold transition-all duration-300 relative py-2 ${
+                    active ? 'text-brand-dark' : 'text-brand-muted hover:text-brand-gold'
+                  }`}
+                >
+                  {link.name}
+                  {active && (
+                    <motion.div
+                      layoutId="activeNav"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-gold"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </Link>
+              );
+            })}
             <Link
               href="/book"
               className="bg-brand-brown text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-brand-dark transition-all duration-300 shadow-lg shadow-brand-brown/20"
@@ -86,16 +106,26 @@ const Navbar = () => {
             className="md:hidden bg-white border-b border-gray-100 overflow-hidden"
           >
             <div className="px-4 pt-2 pb-6 space-y-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block px-3 py-4 text-base font-medium text-brand-dark hover:bg-brand-beige rounded-lg transition-colors"
-                >
-                  {link.name}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const active = isActive(link.href);
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`block px-3 py-4 text-base font-bold rounded-lg transition-all ${
+                      active 
+                        ? 'text-brand-gold bg-brand-cream/50' 
+                        : 'text-brand-dark hover:bg-brand-cream'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      {link.name}
+                      {active && <div className="w-1.5 h-1.5 rounded-full bg-brand-gold" />}
+                    </div>
+                  </Link>
+                );
+              })}
               <div className="pt-4 px-3">
                 <Link
                   href="/book"
