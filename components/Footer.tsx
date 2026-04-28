@@ -30,7 +30,12 @@ const Footer = () => {
               Expert clinical dermatology and aesthetic care focused on results and safety. Science-backed treatments for your skin and hair.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-brand-sand/20 flex items-center justify-center text-brand-muted hover:bg-brand-gold hover:text-white transition-all">
+              <a 
+                href="https://www.instagram.com/dermshifayadav/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-10 h-10 rounded-full bg-brand-sand/20 flex items-center justify-center text-brand-muted hover:bg-brand-gold hover:text-white transition-all"
+              >
                 <Instagram size={18} />
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-brand-sand/20 flex items-center justify-center text-brand-muted hover:bg-brand-gold hover:text-white transition-all">
@@ -50,7 +55,6 @@ const Footer = () => {
                 <li><Link href="/about" className="hover:text-brand-gold transition-colors">About</Link></li>
                 <li><Link href="/contact" className="hover:text-brand-gold transition-colors">Contact Us</Link></li>
                 <li><Link href="/#results" className="hover:text-brand-gold transition-colors">Result</Link></li>
-                <li><Link href="/#testimonials" className="hover:text-brand-gold transition-colors">Testimonials</Link></li>
               </ul>
             </div>
 

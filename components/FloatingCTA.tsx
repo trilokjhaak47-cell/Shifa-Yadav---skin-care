@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { MessageCircle, Calendar } from 'lucide-react';
 
+import Link from 'next/link';
+
 const FloatingCTA = () => {
   const [showSticky, setShowSticky] = useState(false);
 
@@ -53,16 +55,16 @@ const FloatingCTA = () => {
           >
             <div className="bg-white/80 backdrop-blur-xl border border-brand-sand p-2 rounded-2xl shadow-2xl flex items-center space-x-2">
               <div className="flex-1 px-4">
-                <div className="text-[10px] uppercase font-bold text-brand-gold tracking-widest">Next Available</div>
-                <div className="text-sm font-bold text-brand-brown">Today, 2:00 PM onwards</div>
+                <div className="text-[8px] uppercase font-bold text-brand-gold tracking-[0.2em]">LIMITED SLOTS TODAY</div>
+                <div className="text-xs font-bold text-brand-brown whitespace-nowrap">Book Your Appointment</div>
               </div>
-              <a 
-                href="#contact" 
-                className="flex items-center space-x-2 bg-brand-brown text-white px-6 py-4 rounded-xl font-bold text-sm shadow-xl shadow-brand-brown/20 active:scale-95 transition-all"
+              <Link 
+                href="/book" 
+                className="flex items-center space-x-2 bg-brand-brown text-white px-6 py-4 rounded-xl font-bold text-xs shadow-xl shadow-brand-brown/20 active:scale-95 transition-all text-center"
               >
-                <Calendar size={18} />
+                <Calendar size={16} />
                 <span>Book Now</span>
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}
