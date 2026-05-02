@@ -2,59 +2,38 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { 
-  Sparkles, 
-  Scissors, 
-  Zap, 
-  FlaskConical, 
-  Layers, 
-  Microscope,
-  ChevronRight
-} from 'lucide-react';
+import { Check, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const categories = [
   {
     title: "Skin Treatments",
-    icon: Sparkles,
-    services: ["Acne scar reduction", "Melasma treatment", "Eczema & Psoriasis", "Allergy & Urticaria"],
-    color: "bg-pink-50/50",
+    description: "Advanced solutions for acne, pigmentation, and various skin concerns to achieve clear and healthy skin.",
+    image: "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777737793/Skintreatment_vqpibw.jpg",
+    highlights: ["Acne & Acne scars", "Pigmentation", "Melasma", "Skin brightening"],
     href: "/services#skin-treatments"
   },
   {
     title: "Hair Treatments",
-    icon: Scissors,
-    services: ["Hair PRP", "Hair Mesotherapy", "Hair fall consultation"],
-    color: "bg-emerald-50/50",
+    description: "Effective treatments designed to control hair fall, improve scalp health, and promote natural hair growth.",
+    image: "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777737793/Hairtreatment_if7qul.jpg",
+    highlights: ["Hair PRP", "Mesotherapy", "Hair fall treatment", "Scalp care"],
     href: "/services#hair-treatments"
   },
   {
     title: "Laser & Removal",
-    icon: Zap,
-    services: ["Laser hair removal", "Tattoo removal", "Mole & skin tag removal"],
-    color: "bg-blue-50/50",
+    description: "Safe and advanced laser treatments for hair removal and skin procedures with long-lasting results.",
+    image: "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777737793/Hairremovaltreatment_1_fwfdvc.jpg",
+    highlights: ["Laser hair removal", "Tattoo removal", "Mole removal", "Skin tags removal"],
     href: "/services#laser-removal"
   },
   {
     title: "Aesthetic & Anti-Aging",
-    icon: FlaskConical,
-    services: ["Botox & Fillers", "Thread lift", "Skin boosters (PDRN, Exosomes)"],
-    color: "bg-purple-50/50",
+    description: "Non-surgical treatments to enhance skin appearance, reduce aging signs, and improve skin firmness.",
+    image: "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777737793/Antiagingtreatment_o0u9it.jpg",
+    highlights: ["Botox & Fillers", "Thread lift", "Skin tightening", "Skin boosters"],
     href: "/services#aesthetic"
-  },
-  {
-    title: "Advanced Procedures",
-    icon: Layers,
-    services: ["Chemical peeling", "HIFU (skin tightening)", "Radio frequency tightening", "Body & face tightening"],
-    color: "bg-orange-50/50",
-    href: "/services#advanced-procedures"
-  },
-  {
-    title: "Specialized Treatments",
-    icon: Microscope,
-    services: ["Nail surgery", "Electrosurgery", "NB-UVB therapy", "Vitiligo treatment"],
-    color: "bg-slate-50/50",
-    href: "/services#specialized"
   }
 ];
 
@@ -62,49 +41,80 @@ const Services = () => {
   return (
     <section id="services" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
-        <p className="text-brand-gold font-bold tracking-[.3em] uppercase text-[10px] mb-4">Treatment Expertise</p>
-        <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-dark mb-6 tracking-tight">Treatment Categories</h2>
-        <p className="text-brand-text-light max-w-2xl mx-auto text-lg leading-relaxed">
-          Explore our range of comprehensive medical and aesthetic solutions designed for your skin and hair health.
-        </p>
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-4xl md:text-5xl font-serif font-bold text-brand-dark mb-6 tracking-tight"
+        >
+          Treatment Categories
+        </motion.h2>
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="text-brand-muted max-w-2xl mx-auto text-lg leading-relaxed"
+        >
+          Explore our wide range of expert dermatology and aesthetic treatments designed for healthy, glowing skin.
+        </motion.p>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {categories.map((cat, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              whileHover={{ y: -8, scale: 1.01 }}
-              className="group bg-brand-cream/10 p-8 rounded-2xl border border-brand-sand/50 shadow-sm hover:shadow-xl hover:shadow-brand-sand/20 transition-all duration-300 flex flex-col items-center text-center md:items-start md:text-left"
+              whileHover={{ y: -10 }}
+              className="group bg-white rounded-3xl border border-brand-sand/30 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full w-full md:w-[80%] mx-auto"
             >
-              <div className={`w-14 h-14 rounded-2xl ${cat.color} flex items-center justify-center text-brand-brown mb-6 group-hover:scale-110 transition-transform duration-500`}>
-                <cat.icon size={26} className="text-brand-gold" />
+              {/* Image Header */}
+              <div className="relative aspect-[16/9] overflow-hidden">
+                <Image 
+                  src={cat.image}
+                  alt={cat.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent group-hover:opacity-0 transition-opacity" />
               </div>
               
-              <h3 className="text-xl font-bold text-brand-dark mb-4">{cat.title}</h3>
-              
-              <ul className="space-y-3 mb-8 flex-grow">
-                {cat.services.map((service, si) => (
-                   <li key={si} className="flex items-start md:items-start gap-2 text-brand-text-light text-sm text-left">
-                    <div className="w-1 h-1 rounded-full bg-brand-gold mt-2 shrink-0" />
-                    <span>{service}</span>
-                  </li>
-                ))}
-              </ul>
+              {/* Content Box */}
+              <div className="p-8 md:p-10 flex flex-col flex-grow">
+                <h3 className="text-2xl font-bold text-brand-dark mb-4">{cat.title}</h3>
+                <p className="text-brand-muted text-sm leading-relaxed mb-6">
+                  {cat.description}
+                </p>
+                
+                <ul className="space-y-3 mb-8 flex-grow">
+                  {cat.highlights.map((item, si) => (
+                    <li key={si} className="flex items-center gap-3 text-brand-dark font-medium text-xs">
+                      <div className="w-5 h-5 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold shrink-0">
+                        <Check size={12} />
+                      </div>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
 
-              <Link href={cat.href} className="flex items-center text-brand-brown font-bold text-xs uppercase tracking-widest group-hover:text-brand-gold transition-colors">
-                <span>Learn More</span>
-                <ChevronRight size={14} className="ml-1 group-hover:translate-x-1 transition-transform" />
-              </Link>
+                <Link 
+                  href={cat.href} 
+                  className="inline-flex items-center text-brand-brown font-bold text-sm group-hover:text-brand-gold transition-colors"
+                >
+                  <span>Learn More</span>
+                  <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
             </motion.div>
           ))}
         </div>
 
-        <div className="mt-16 text-center">
+        <div className="mt-20 text-center">
           <Link href="/services">
             <motion.button
               whileHover={{ scale: 1.05 }}

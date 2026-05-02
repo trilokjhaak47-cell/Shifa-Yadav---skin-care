@@ -82,17 +82,6 @@ const FAQ = () => {
             </motion.div>
           ))}
         </div>
-
-        <div className="mt-16 p-8 md:p-12 bg-brand-brown rounded-[3rem] text-center text-white relative overflow-hidden">
-           <div className="absolute top-[-50%] left-[-20%] w-[300px] h-[300px] bg-brand-gold/20 rounded-full blur-3xl opacity-30" />
-           <div className="relative z-10">
-             <h3 className="text-2xl md:text-3xl font-serif font-bold mb-4">Still have questions?</h3>
-             <p className="text-white/70 mb-8 max-w-lg mx-auto">Our team is here to help you understand every step of your skin transformation journey.</p>
-             <Link href="#contact" className="inline-block bg-brand-gold text-brand-dark px-10 py-4 rounded-full font-bold text-lg hover:bg-white transition-all shadow-xl shadow-brand-gold/20">
-               Direct Support
-             </Link>
-           </div>
-        </div>
       </div>
     </section>
   );
