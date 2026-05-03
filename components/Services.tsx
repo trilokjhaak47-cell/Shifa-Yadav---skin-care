@@ -47,7 +47,7 @@ const Services = () => {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-serif font-bold text-brand-dark mb-6 tracking-tight"
         >
-          Treatment Categories
+          Our Treatments
         </motion.h2>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
