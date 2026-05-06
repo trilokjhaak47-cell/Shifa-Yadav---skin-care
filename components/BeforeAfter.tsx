@@ -156,7 +156,7 @@ const BeforeAfter = () => {
           {/* Centered CTA Button */}
           <div className="flex justify-center">
             <motion.a
-              href="https://www.instagram.com/drshifayadav/" 
+              href="https://www.instagram.com/dermshifayadav/" 
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}

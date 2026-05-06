@@ -5,13 +5,13 @@ import { motion, useInView, animate } from 'motion/react';
 
 const CountUp = ({ to, suffix = "", duration = 2 }: { to: number; suffix?: string; duration?: number }) => {
   const countRef = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(countRef, { once: true });
+  const isInView = useInView(countRef, { once: true, margin: "-100px" });
 
   useEffect(() => {
     if (isInView && countRef.current) {
       const controls = animate(0, to, {
         duration,
-        ease: "easeOut",
+        ease: [0.16, 1, 0.3, 1], // Custom premium easing: easeOutQuart
         onUpdate(value) {
           if (countRef.current) {
             countRef.current.textContent = Math.floor(value).toLocaleString() + suffix;
@@ -27,8 +27,8 @@ const CountUp = ({ to, suffix = "", duration = 2 }: { to: number; suffix?: strin
 
 const About = () => {
   const stats = [
-    { label: "Happy Patients", value: 10000, suffix: "+" },
-    { label: "Years Experience", value: 10, suffix: "+" },
+    { label: "Happy Patients", value: 3200, suffix: "+" },
+    { label: "Years Experience", value: 8, suffix: "+" },
     { label: "Proven Methods", value: "Clinical", isStatic: true },
     { label: "Skin Guidance", value: "Trusted", isStatic: true }
   ];
