@@ -24,7 +24,11 @@ const ClinicGallery = () => {
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    setMounted(true);
+    const frame = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
+  useEffect(() => {
     const handleResize = () => {
       const mobile = window.innerWidth < 768;
       setIsMobile(mobile);
@@ -125,7 +129,7 @@ const ClinicGallery = () => {
           {/* Navigation Buttons */}
           <button 
             onClick={handleManualPrev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/80 backdrop-blur-md border border-brand-sand flex items-center justify-center text-brand-dark shadow-lg opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex"
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md border border-white/30 flex items-center justify-center text-brand-dark shadow-xl transition-all z-10 flex"
             aria-label="Previous"
           >
             <ChevronLeft size={24} />
@@ -133,7 +137,7 @@ const ClinicGallery = () => {
           
           <button 
             onClick={handleManualNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/80 backdrop-blur-md border border-brand-sand flex items-center justify-center text-brand-dark shadow-lg opacity-0 group-hover:opacity-100 md:group-hover:opacity-100 transition-opacity flex"
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md border border-white/30 flex items-center justify-center text-brand-dark shadow-xl transition-all z-10 flex"
             aria-label="Next"
           >
             <ChevronRight size={24} />

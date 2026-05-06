@@ -7,6 +7,11 @@ import { Instagram, ArrowRight } from 'lucide-react';
 
 const results = [
   { 
+    title: "Full Face Rejuvenation", 
+    desc: "Achieve a lifted, youthful appearance with threads and fillers designed to enhance facial contours naturally.",
+    image: "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1778088522/Untitled_design_6_vdpf7a.png"
+  },
+  { 
     title: "Acne Scars", 
     desc: "Comprehensive treatment for acne scarring and skin texture refinement.",
     image: "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1778072143/5_jp93pc.png"
@@ -25,6 +30,11 @@ const results = [
 
 const instaPosts = [
   {
+    text: "Dramatic results for full face profile enhancement.",
+    image: "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1778089346/photo_2026-05-06_23-12-06_nzly78.jpg",
+    url: "https://www.instagram.com/p/DLwU5BaSHpe/?igsh=a3ZnczF2eXRwa3M2"
+  },
+  {
     text: "See the magic of fillers, botox, and threads in one.",
     image: "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1778074008/photo_2026-05-06_18-56-30_hsi1uk.jpg",
     url: "https://www.instagram.com/p/DNKxyZ4Sm7y/?igsh=MTFycnJubHExdzBwag=="
@@ -40,15 +50,15 @@ const BeforeAfter = () => {
   return (
     <section id="results" className="py-24 bg-brand-dark text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <p className="text-brand-gold font-bold tracking-[.4em] uppercase text-xs md:text-sm mb-4">Real Results</p>
-          <h2 className="text-5xl md:text-7xl font-serif font-bold mb-6 tracking-tight">Patient Transformations</h2>
-          <p className="text-white/60 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
+        <div className="text-center mb-24">
+          <p className="text-brand-gold font-bold tracking-[.4em] uppercase text-2xl md:text-5xl lg:text-6xl mb-8">Real Results</p>
+          <h2 className="text-2xl md:text-3xl font-serif font-medium text-white/70 mb-6 tracking-tight">Patient Transformations</h2>
+          <p className="text-white/40 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
             Witness the science-driven changes our patients experience. Actual results from real patients under the care of Dr. Shifa Yadav.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-12 gap-y-20 mb-32 max-w-5xl mx-auto">
           {/* Real Transformations */}
           {results.map((r, i) => (
             <motion.div
@@ -106,7 +116,7 @@ const BeforeAfter = () => {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
             {instaPosts.map((p, i) => (
               <motion.a
                 key={`insta-${i}`}

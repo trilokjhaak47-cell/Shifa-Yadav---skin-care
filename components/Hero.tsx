@@ -58,13 +58,14 @@ const Hero = () => {
               </a>
             </div>
             
-            <div className="flex flex-wrap gap-8 pt-8 border-t border-brand-sand w-fit">
+            <div className="grid grid-cols-2 lg:flex lg:flex-row gap-6 md:gap-8 pt-8 border-t border-brand-sand w-full lg:w-fit">
               {[
                 { title: "Certified", desc: "Expert Dermatologist" },
-                { title: "Clinical", desc: "Science-Backed Methods" },
-                { title: "Proven", desc: "10,000+ Happy Patients" }
+                { title: "Clinical", desc: "Science-Backed" },
+                { title: "Proven", desc: "10,000+ Patients" },
+                { title: "Medalist", desc: "MD Gold Medalist" }
               ].map((badge, i) => (
-                <div key={i} className="flex flex-col">
+                <div key={i} className="flex flex-col items-center lg:items-start text-center lg:text-left">
                   <span className="text-xs uppercase tracking-tighter text-brand-muted font-bold">{badge.title}</span>
                   <span className="text-[10px] text-brand-text-light/70">{badge.desc}</span>
                 </div>

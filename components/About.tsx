@@ -1,13 +1,36 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'motion/react';
+import React, { useEffect, useRef } from 'react';
+import { motion, useInView, animate } from 'motion/react';
+
+const CountUp = ({ to, suffix = "", duration = 2 }: { to: number; suffix?: string; duration?: number }) => {
+  const countRef = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(countRef, { once: true });
+
+  useEffect(() => {
+    if (isInView && countRef.current) {
+      const controls = animate(0, to, {
+        duration,
+        ease: "easeOut",
+        onUpdate(value) {
+          if (countRef.current) {
+            countRef.current.textContent = Math.floor(value).toLocaleString() + suffix;
+          }
+        },
+      });
+      return () => controls.stop();
+    }
+  }, [isInView, to, suffix, duration]);
+
+  return <span ref={countRef}>0{suffix}</span>;
+};
 
 const About = () => {
   const stats = [
-    { label: "Happy Patients", value: "10,000+" },
-    { label: "Proven Methods", value: "Clinical" },
-    { label: "Skin Guidance", value: "Trusted" }
+    { label: "Happy Patients", value: 10000, suffix: "+" },
+    { label: "Years Experience", value: 10, suffix: "+" },
+    { label: "Proven Methods", value: "Clinical", isStatic: true },
+    { label: "Skin Guidance", value: "Trusted", isStatic: true }
   ];
 
   return (
@@ -41,12 +64,18 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 max-w-5xl mx-auto"
         >
           {stats.map((stat, i) => (
             <div key={i} className="flex flex-col items-center">
-              <span className="text-3xl font-serif font-bold text-brand-brown mb-1">{stat.value}</span>
-              <span className="text-[10px] uppercase tracking-widest text-brand-muted font-bold">{stat.label}</span>
+              <span className="text-3xl md:text-4xl font-serif font-bold text-brand-brown mb-1">
+                {typeof stat.value === 'number' && !stat.isStatic ? (
+                  <CountUp to={stat.value} suffix={stat.suffix} />
+                ) : (
+                  stat.value
+                )}
+              </span>
+              <span className="text-[10px] md:text-xs uppercase tracking-widest text-brand-muted font-bold">{stat.label}</span>
             </div>
           ))}
         </motion.div>
