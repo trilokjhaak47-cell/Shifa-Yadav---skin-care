@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import FloatingCTA from '@/components/FloatingCTA';
 import ConsultationPopup from '@/components/ConsultationPopup';
+import ResizeObserverFix from '@/components/ResizeObserverFix';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -23,6 +24,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body suppressHydrationWarning className="font-sans antialiased bg-brand-cream text-brand-text">
+        <ResizeObserverFix />
         {children}
         <FloatingCTA />
         <ConsultationPopup />

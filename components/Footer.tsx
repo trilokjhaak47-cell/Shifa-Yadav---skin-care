@@ -44,9 +44,8 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Grouped Links for mobile side-by-side */}
+          {/* Quick Links */}
           <div className="grid grid-cols-2 gap-8 md:grid-cols-2 md:gap-12 lg:contents">
-            {/* Quick Links */}
             <div>
               <h4 className="text-[10px] font-bold uppercase tracking-[.2em] text-brand-muted mb-6">Quick Links</h4>
               <ul className="space-y-4 text-sm font-medium text-brand-brown">
@@ -58,15 +57,25 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Services */}
+            {/* Timings */}
             <div>
-              <h4 className="text-[10px] font-bold uppercase tracking-[.2em] text-brand-muted mb-6">Treatments</h4>
-              <ul className="space-y-4 text-sm font-medium text-brand-brown">
-                <li><Link href="/services" className="hover:text-brand-gold transition-colors">Skin Treatments</Link></li>
-                <li><Link href="/services" className="hover:text-brand-gold transition-colors">Hair Treatments</Link></li>
-                <li><Link href="/services" className="hover:text-brand-gold transition-colors">Laser & Removal</Link></li>
-                <li><Link href="/services" className="hover:text-brand-gold transition-colors">Aesthetic Treatments</Link></li>
-                <li><Link href="/services" className="hover:text-brand-gold transition-colors">Advanced Procedures</Link></li>
+              <h4 className="text-[10px] font-bold uppercase tracking-[.2em] text-brand-muted mb-6">Clinic Timings</h4>
+              <ul className="space-y-3 text-[11px] font-bold text-brand-brown uppercase tracking-wider">
+                <li className="flex justify-between border-b border-brand-sand pb-1.5">
+                  <span>Sun</span> <span className="text-brand-gold">12 – 4 PM</span>
+                </li>
+                <li className="flex justify-between border-b border-brand-sand pb-1.5">
+                  <span>Mon</span> <span className="text-brand-gold">4 – 7 PM</span>
+                </li>
+                <li className="flex justify-between border-b border-brand-sand pb-1.5">
+                  <span>Tue</span> <span className="text-brand-gold">4 – 7 PM</span>
+                </li>
+                <li className="flex justify-between border-b border-brand-sand pb-1.5">
+                  <span>Thu</span> <span className="text-brand-gold">4 – 7 PM</span>
+                </li>
+                <li className="flex justify-between opacity-40">
+                  <span>Wed, Fri, Sat</span> <span>Closed</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -80,7 +89,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center space-x-2 text-[10px] font-bold text-brand-gold uppercase tracking-[.2em]">
               <div className="w-2 h-2 bg-brand-gold rounded-full animate-pulse"></div>
-              <span>Open Today: 10AM - 7PM</span>
+              <span>Clinical Excellence in Dermatology</span>
             </div>
           </div>
         </div>

@@ -348,9 +348,10 @@ const BookAppointmentPage = () => {
                       <Clock size={24} />
                     </div>
                     <div>
-                      <h4 className="text-xs uppercase font-bold tracking-widest text-brand-muted mb-1">Working Hours</h4>
-                      <p className="text-lg font-bold text-brand-brown">Mon – Sat: 10 AM – 7 PM</p>
-                      <p className="text-sm text-brand-text-light italic">Sunday Closed</p>
+                      <h4 className="text-xs uppercase font-bold tracking-widest text-brand-muted mb-1">Clinic Timings</h4>
+                      <p className="text-lg font-bold text-brand-brown">Sun: 12 – 4 PM</p>
+                      <p className="text-lg font-bold text-brand-brown">Mon, Tue, Thu: 4 – 7 PM</p>
+                      <p className="text-sm text-brand-text-light italic">Wed, Fri, Sat: Clinic Closed</p>
                     </div>
                   </div>
                 </div>

@@ -1,11 +1,13 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import Expertise from '@/components/Expertise';
 import Services from '@/components/Services';
 import PopularTreatments from '@/components/PopularTreatments';
 import TechSection from '@/components/TechSection';
 import BeforeAfter from '@/components/BeforeAfter';
 import Testimonials from '@/components/Testimonials';
+import ClinicGallery from '@/components/ClinicGallery';
 import SocialProof from '@/components/SocialProof';
 import FAQ from '@/components/FAQ';
 import QueryForm from '@/components/QueryForm';
@@ -20,11 +22,13 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <Expertise />
       <Services />
       <PopularTreatments />
       <TechSection />
       <BeforeAfter />
       <Testimonials />
+      <ClinicGallery />
       <SocialProof />
       <FAQ />
       <QueryForm />

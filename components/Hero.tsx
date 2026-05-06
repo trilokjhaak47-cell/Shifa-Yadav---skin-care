@@ -85,7 +85,7 @@ const Hero = () => {
 
             <div className="relative w-full h-full lg:absolute lg:inset-0 z-0">
                <Image 
-                src="https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777289494/ChatGPTImageApr27202602_17_18A_yi3lxs.jpg" 
+                src="https://res.cloudinary.com/dvfhhtrlw/image/upload/v1778066868/photo_2026-05-06_16-57-32_rogfdm.jpg" 
                 alt="Dr. Shifa Yadav" 
                 fill
                 className="object-cover"

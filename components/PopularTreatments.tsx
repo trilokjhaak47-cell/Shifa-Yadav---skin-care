@@ -10,16 +10,19 @@ const treatments = [
   {
     title: "Acne & Acne Scar Treatment",
     description: "Get clear, healthy skin with advanced treatments designed to reduce active acne and visibly improve acne scars. Personalized solutions ensure long-lasting results and smoother skin texture.",
-    image: "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777735107/AcneTreatment_lb1pn1.jpg",
+    images: [
+      "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1778072185/1_xjgqtm.png",
+      "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1778072219/4_ul1kgc.png"
+    ],
     highlights: ["Reduces acne and scars effectively", "Improves skin texture and clarity", "Safe, dermatologist-guided treatment"],
     cta: "Book Consultation"
   },
   {
     title: "Pigmentation Treatment",
     description: "Target dark spots, melasma, and uneven skin tone with clinically proven treatments that restore natural skin brightness and even complexion over time.",
-    image: "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777735107/PigmentationTreatment_k6godk.jpg",
+    image: "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1778072190/3_ynhjtk.png",
     highlights: ["Reduces dark spots and pigmentation", "Evens out skin tone", "Long-term skin improvement"],
-    cta: "Learn More"
+    cta: "Book Consultation"
   },
   {
     title: "Laser Hair Removal",
@@ -29,11 +32,11 @@ const treatments = [
     cta: "Book Consultation"
   },
   {
-    title: "Anti-Aging & Skin Tightening",
-    description: "Rejuvenate your skin with non-surgical treatments that lift, tighten, and reduce fine lines, giving you a youthful and refreshed appearance.",
-    image: "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777735107/Anti-agingTreatment_ztceyv.jpg",
-    highlights: ["Improves skin firmness and elasticity", "Reduces fine lines and wrinkles", "Non-invasive and safe procedures"],
-    cta: "Learn More"
+    title: "Lip Fillers",
+    description: "Enhance lip shape, volume, and definition with safe, non-surgical filler treatments designed for a natural and balanced look.",
+    image: "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1778072403/IMG_7072_jqkqj2.jpg",
+    highlights: ["Naturally enhanced lip volume", "Improved shape and definition", "Safe, dermatologist-performed procedure"],
+    cta: "Book Consultation"
   }
 ];
 
@@ -76,20 +79,42 @@ const PopularTreatments = () => {
             >
               {/* Image Column */}
               <div className="w-full md:w-1/2">
-                <motion.div 
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.4 }}
-                  className="relative aspect-4/3 overflow-hidden rounded-[2.5rem] shadow-2xl group"
-                >
-                  <Image
-                    src={treatment.image}
-                    alt={treatment.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/20 to-transparent pointer-events-none" />
-                </motion.div>
+                {treatment.images ? (
+                  <div className="grid grid-cols-2 gap-4">
+                    {treatment.images.map((img, i) => (
+                      <motion.div 
+                        key={i}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.4 }}
+                        className={`relative aspect-[4/5] overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-xl group ${i === 1 ? 'mt-8 md:mt-12' : 'mb-8 md:mb-12'}`}
+                      >
+                        <Image
+                          src={img}
+                          alt={`${treatment.title} ${i + 1}`}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-110"
+                          referrerPolicy="no-referrer"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/20 to-transparent pointer-events-none" />
+                      </motion.div>
+                    ))}
+                  </div>
+                ) : (
+                  <motion.div 
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.4 }}
+                    className="relative aspect-4/3 overflow-hidden rounded-[2.5rem] shadow-2xl group"
+                  >
+                    <Image
+                      src={treatment.image!}
+                      alt={treatment.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/20 to-transparent pointer-events-none" />
+                  </motion.div>
+                )}
               </div>
 
               {/* Content Column */}

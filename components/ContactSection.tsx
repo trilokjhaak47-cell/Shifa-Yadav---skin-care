@@ -31,10 +31,10 @@ const ContactSection = () => {
     },
     { 
       icon: <Clock size={22} />, 
-      label: "Working Hours", 
-      value: "Mon – Sat: 10 AM – 7 PM", 
-      subValue: "Sunday: Closed",
-      description: "Visit us during these hours"
+      label: "Clinic Timings", 
+      value: "Sun: 12 – 4 PM | Mon: 4 – 7 PM", 
+      subValue: "Tue, Thu: 4 – 7 PM | Wed, Fri, Sat: Closed",
+      description: "Convenient evening & weekend hours"
     }
   ];
 

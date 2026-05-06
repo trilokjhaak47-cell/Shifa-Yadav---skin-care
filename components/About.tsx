@@ -2,28 +2,8 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { GraduationCap, Atom, UserRound, ShieldCheck } from 'lucide-react';
 
 const About = () => {
-  const trustPoints = [
-    { 
-      title: "Certified Dermatologist", 
-      icon: GraduationCap 
-    },
-    { 
-      title: "Science-Based Approach", 
-      icon: Atom 
-    },
-    { 
-      title: "Personalized Solutions", 
-      icon: UserRound 
-    },
-    { 
-      title: "Long-Term Results", 
-      icon: ShieldCheck 
-    }
-  ];
-
   const stats = [
     { label: "Happy Patients", value: "10,000+" },
     { label: "Proven Methods", value: "Clinical" },
@@ -61,7 +41,7 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 border-b border-brand-sand pb-12 max-w-4xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
         >
           {stats.map((stat, i) => (
             <div key={i} className="flex flex-col items-center">
@@ -70,31 +50,6 @@ const About = () => {
             </div>
           ))}
         </motion.div>
-
-        {/* Trust Points Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          {trustPoints.map((point, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 + 0.3 }}
-              whileHover={{ y: -10 }}
-              className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-brand-sand/30 shadow-sm transition-all hover:shadow-2xl hover:shadow-brand-sand/30 group flex flex-col items-center text-center h-full"
-            >
-              <div className="mb-6 relative">
-                <div className="absolute inset-0 bg-brand-gold/10 rounded-full scale-150 blur-sm group-hover:bg-brand-gold/20 transition-colors" />
-                <div className="relative w-12 h-12 rounded-full bg-brand-cream/50 flex items-center justify-center text-brand-gold border border-brand-gold/10">
-                  <point.icon size={24} strokeWidth={1.5} />
-                </div>
-              </div>
-              <h4 className="font-bold text-brand-dark uppercase tracking-widest text-[10px] md:text-xs leading-tight">
-                {point.title}
-              </h4>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );
