@@ -52,8 +52,10 @@ const techItems = [
 
 const TechSection = () => {
   return (
-    <section className="py-24 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-brand-cream/20 overflow-hidden relative">
+      {/* Soft Premium Background Shape */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-sand/10 rounded-full blur-[120px] -z-0" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
           <motion.p 
             initial={{ opacity: 0, y: 10 }}
@@ -92,8 +94,8 @@ const TechSection = () => {
                 viewport={{ once: true, margin: "-100px" }}
                 className="w-full lg:w-1/2 relative group"
               >
-                <div className={`absolute -inset-4 ${item.bgColor} rounded-[2.5rem] -z-10 transition-transform group-hover:scale-105 duration-700`} />
-                <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl shadow-brand-sand/30 border border-brand-sand/50">
+                <div className={`absolute -inset-4 ${item.bgColor} rounded-[2.5rem] -z-10 transition-transform group-hover:scale-105 duration-700 shadow-inner`} />
+                <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl shadow-brand-sand/20 border border-brand-sand/30">
                   <Image 
                     src={item.image}
                     alt={item.title}

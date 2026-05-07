@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { MessageCircle, Send } from 'lucide-react';
+import { MessageCircle, Send, Calendar } from 'lucide-react';
 
 const QueryForm = () => {
   const [formData, setFormData] = useState({
@@ -53,6 +53,16 @@ const QueryForm = () => {
           >
             Feel free to ask anything about treatments, consultations, or your concerns — we’re here to help.
           </motion.p>
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.15 }}
+            className="flex items-center justify-center space-x-2 text-[10px] font-bold text-brand-gold uppercase tracking-[.2em] mt-4"
+          >
+            <Calendar size={12} className="text-brand-gold" />
+            <span>Consultations Available by Prior Appointment Only</span>
+          </motion.div>
           <motion.div 
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}

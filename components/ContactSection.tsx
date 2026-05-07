@@ -8,7 +8,8 @@ import {
   Clock, 
   MessageCircle, 
   ArrowRight,
-  ExternalLink
+  ExternalLink,
+  Calendar
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -34,7 +35,7 @@ const ContactSection = () => {
       label: "Clinic Timings", 
       value: "Sun: 12 – 4 PM | Mon: 4 – 7 PM", 
       subValue: "Tue, Thu: 4 – 7 PM | Wed, Fri, Sat: Closed",
-      description: "Convenient evening & weekend hours"
+      description: "Consultations Available by Prior Appointment Only"
     }
   ];
 

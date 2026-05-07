@@ -10,7 +10,8 @@ import {
   Facebook, 
   Twitter, 
   ArrowRight,
-  ShieldCheck
+  ShieldCheck,
+  Calendar
 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -77,6 +78,10 @@ const Footer = () => {
                   <span>Wed, Fri, Sat</span> <span>Closed</span>
                 </li>
               </ul>
+              <div className="mt-6 flex items-center space-x-2 text-[10px] font-bold text-brand-gold uppercase tracking-wider">
+                <Calendar size={12} strokeWidth={2.5} />
+                <span>Consultations Available by Prior Appointment Only</span>
+              </div>
             </div>
           </div>
 

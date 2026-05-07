@@ -3,17 +3,18 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useInView, animate } from 'motion/react';
 
-const CountUp = ({ to, suffix = "", duration = 2 }: { to: number; suffix?: string; duration?: number }) => {
+const CountUp = ({ to, suffix = "", duration = 3.0 }: { to: number; suffix?: string; duration?: number }) => {
   const countRef = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(countRef, { once: true, margin: "-100px" });
+  const isInView = useInView(countRef, { once: true, margin: "-50px" });
 
   useEffect(() => {
     if (isInView && countRef.current) {
       const controls = animate(0, to, {
         duration,
-        ease: [0.16, 1, 0.3, 1], // Custom premium easing: easeOutQuart
+        ease: [0.33, 1, 0.68, 1], // easeOutCubic/Quart blend for more "fluid" feel
         onUpdate(value) {
           if (countRef.current) {
+            // Using a more gradual update
             countRef.current.textContent = Math.floor(value).toLocaleString() + suffix;
           }
         },

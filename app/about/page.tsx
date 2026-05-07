@@ -3,6 +3,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Expertise from '@/components/Expertise';
 import { motion } from 'motion/react';
 import { 
   ShieldCheck, 
@@ -24,15 +25,15 @@ import { useInView, animate } from 'motion/react';
 
 const Counter = ({ value, label, icon: Icon }: { value: string, label: string, icon: any }) => {
   const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
   const [displayValue, setDisplayValue] = React.useState(0);
   
   React.useEffect(() => {
     if (isInView) {
       const numericValue = parseInt(value.replace(/\D/g, ''));
       const controls = animate(0, numericValue, {
-        duration: 1.5,
-        ease: "easeOut",
+        duration: 3.0,
+        ease: [0.33, 1, 0.68, 1],
         onUpdate: (latest) => setDisplayValue(Math.floor(latest))
       });
       return () => controls.stop();
@@ -56,9 +57,9 @@ const Counter = ({ value, label, icon: Icon }: { value: string, label: string, i
 
 export default function AboutPage() {
   const stats = [
-    { label: "Happy Patients", value: "1000+", icon: Users },
+    { label: "Happy Patients", value: "3200+", icon: Users },
     { label: "Advanced Methods", value: "50+", icon: Microscope },
-    { label: "Years Experience", value: "10+", icon: Award },
+    { label: "Years Experience", value: "8+", icon: Award },
     { label: "Personalized Care", value: "100%", icon: Heart },
   ];
 
@@ -245,8 +246,8 @@ export default function AboutPage() {
       </section>
 
       {/* Technology Brief */}
-      <section className="py-24 bg-brand-dark text-white overflow-hidden relative">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-gold/10 rounded-full blur-[120px] -z-0" />
+      <section className="py-24 bg-brand-cream/30 overflow-hidden relative">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-sand/20 rounded-full blur-[120px] -z-0" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -254,8 +255,8 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-serif font-bold mb-8 text-white">Advanced Technology We Use</h2>
-              <p className="text-white/80 text-lg mb-10 leading-relaxed">
+              <h2 className="text-4xl font-serif font-bold mb-8 text-brand-dark">Advanced Technology We Use</h2>
+              <p className="text-brand-text-light text-lg mb-10 leading-relaxed">
                 World-class clinical expertise meets modern technology. We invest in high-end medical systems to ensure safety and superior results.
               </p>
               <ul className="space-y-4">
@@ -264,7 +265,7 @@ export default function AboutPage() {
                   "Safe and clinically proven treatments",
                   "Better and more effective results"
                 ].map((benefit, i) => (
-                  <li key={i} className="flex items-center gap-3 text-white/90 font-medium">
+                  <li key={i} className="flex items-center gap-3 text-brand-dark font-medium">
                     <div className="p-1 bg-brand-gold rounded-full text-white">
                       <ShieldCheck size={16} />
                     </div>
@@ -280,7 +281,7 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="relative aspect-video w-full rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 group bg-white/5">
+              <div className="relative aspect-video w-full rounded-[2rem] overflow-hidden shadow-2xl border border-brand-sand/30 group bg-white">
                 <Image 
                   src="https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777392113/photo_2026-04-28_21-31-13_yyj73t.jpg" 
                   alt="Advanced Laser Technology" 
@@ -294,45 +295,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Affiliations & Recognition */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-serif font-bold text-brand-dark mb-4">Affiliations & Recognition</h2>
-            <p className="text-brand-text-light">Professional memberships and certifications of Dr. Shifa Yadav.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { 
-                title: "Professional Associations", 
-                items: ["Member of Indian Association of Dermatologists", "Member of Cosmetic Dermatology Society of India"] 
-              },
-              { 
-                title: "Certifications", 
-                items: ["Certified in Advanced Aesthetic Procedures", "Fellowship in Laser & Cosmetology"] 
-              },
-              { 
-                title: "Achievements", 
-                items: ["Clinical Excellence Award 2023", "Pioneer in Advanced Hair Restoration"] 
-              }
-            ].map((box, i) => (
-              <div key={i} className="p-8 rounded-3xl border border-brand-sand bg-brand-cream/10">
-                <h3 className="text-lg font-bold text-brand-dark mb-6 border-b border-brand-sand pb-4">{box.title}</h3>
-                <ul className="space-y-4">
-                  {box.items.map((item, j) => (
-                    <li key={j} className="flex items-start gap-3 text-sm text-brand-text-light">
-                      <div className="mt-1 shrink-0">
-                        <Award size={16} className="text-brand-gold" />
-                      </div>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Trusted Expertise & Professional Excellence Section */}
+      <Expertise />
 
       {/* Trust Stats */}
       <section className="py-16 bg-white border-b border-brand-sand">
