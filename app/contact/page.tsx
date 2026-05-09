@@ -28,9 +28,20 @@ const ContactPage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Contact Form Submitted:', formData);
+    const { name, phone, message } = formData;
+    
+    if (!name || !phone) return;
+
+    const professionalMessage = `New Contact Message\n\n` +
+      `Name: ${name}\n` +
+      `Phone: ${phone}\n` +
+      `Message: ${message}`;
+
+    const encodedMessage = encodeURIComponent(professionalMessage);
+    const whatsappUrl = `https://wa.me/919910195029?text=${encodedMessage}`;
+    
     setIsSubmitted(true);
-    // In a real app, this would be an API call
+    window.open(whatsappUrl, '_blank');
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

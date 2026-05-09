@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { motion } from 'motion/react';
 import { MessageCircle, Send, Calendar } from 'lucide-react';
 
@@ -16,7 +17,11 @@ const QueryForm = () => {
     
     if (!name || !message) return;
 
-    const encodedMessage = encodeURIComponent(`Hi, my name is ${name}. ${message}`);
+    const professionalMessage = `New Inquiry from Website\n\n` +
+      `Name: ${name}\n` +
+      `Message: ${message}`;
+
+    const encodedMessage = encodeURIComponent(professionalMessage);
     const whatsappUrl = `https://wa.me/919910195029?text=${encodedMessage}`;
     
     window.open(whatsappUrl, '_blank');
@@ -26,10 +31,12 @@ const QueryForm = () => {
     <section className="py-24 relative overflow-hidden min-h-[600px] flex items-center">
       {/* Background Image & Overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
+        <Image 
           src="https://res.cloudinary.com/dvfhhtrlw/image/upload/v1777390728/photo_2026-04-28_21-07-04_rosarm.jpg"
           alt="Clinic Background"
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
+          referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-brand-dark/60 backdrop-blur-[2px]" />
       </div>

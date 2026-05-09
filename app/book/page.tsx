@@ -81,9 +81,25 @@ const BookAppointmentPage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Book Appointment Submitted:', formData);
+    const { name, phone, category, treatment, date, time, message } = formData;
+    
+    if (!name || !phone || !treatment || !date || !time) return;
+
+    const professionalMessage = `New Appointment Request\n\n` +
+      `Name: ${name}\n` +
+      `Phone: ${phone}\n` +
+      `Category: ${category}\n` +
+      `Treatment: ${treatment}\n` +
+      `Date: ${date}\n` +
+      `Time: ${time}\n` +
+      `Message: ${message}`;
+
+    const encodedMessage = encodeURIComponent(professionalMessage);
+    const whatsappUrl = `https://wa.me/919910195029?text=${encodedMessage}`;
+    
     setIsSubmitted(true);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.open(whatsappUrl, '_blank');
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {

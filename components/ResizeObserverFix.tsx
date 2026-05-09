@@ -12,10 +12,10 @@ export default function ResizeObserverFix() {
     const handleError = (e: ErrorEvent) => {
       const msg = e.message || '';
       if (
-        msg.includes('ResizeObserver loop limit exceeded') ||
-        msg.includes('ResizeObserver loop completed with undelivered notifications')
+        msg.includes('ResizeObserver') ||
+        msg.includes('loop limit exceeded') ||
+        msg.includes('loop completed with undelivered notifications')
       ) {
-        // Stop the error from being shown in the console (or at least prevent it from crashing/triggering overlays)
         e.stopImmediatePropagation?.();
         e.stopPropagation?.();
         e.preventDefault();
@@ -26,8 +26,9 @@ export default function ResizeObserverFix() {
     window.addEventListener('unhandledrejection', (e: PromiseRejectionEvent) => {
       const msg = e.reason?.message || '';
       if (
-        msg.includes('ResizeObserver loop limit exceeded') ||
-        msg.includes('ResizeObserver loop completed with undelivered notifications')
+        msg.includes('ResizeObserver') ||
+        msg.includes('loop limit exceeded') ||
+        msg.includes('loop completed with undelivered notifications')
       ) {
         e.stopImmediatePropagation?.();
         e.stopPropagation?.();
