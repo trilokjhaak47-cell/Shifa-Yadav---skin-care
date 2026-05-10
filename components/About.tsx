@@ -28,8 +28,8 @@ const CountUp = ({ to, suffix = "", duration = 3.0 }: { to: number; suffix?: str
 
 const About = () => {
   const stats = [
-    { label: "Happy Patients", value: 3200, suffix: "+" },
-    { label: "Years Experience", value: 8, suffix: "+" },
+    { label: "Happy Patients", value: 4500, suffix: "+" },
+    { label: "Years Experience", value: 13, suffix: "+" },
     { label: "Proven Methods", value: "Clinical", isStatic: true },
     { label: "Skin Guidance", value: "Trusted", isStatic: true }
   ];

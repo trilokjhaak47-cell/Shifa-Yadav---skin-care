@@ -7,7 +7,6 @@ import {
   Mail, 
   MapPin, 
   Instagram, 
-  Facebook, 
   Twitter, 
   ArrowRight,
   ShieldCheck,
@@ -24,8 +23,15 @@ const Footer = () => {
           {/* Logo & About */}
           <div className="col-span-1 lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 bg-brand-gold rounded-full flex items-center justify-center text-white font-serif text-lg">S</div>
-              <span className="text-lg font-serif font-bold tracking-tight text-brand-brown leading-none uppercase">DR. SHIFA YADAV</span>
+              <div className="relative h-10 w-48 md:h-12 md:w-56">
+                <Image 
+                  src="https://res.cloudinary.com/dvfhhtrlw/image/upload/v1778438049/IMG_7269_mmhoxq.png"
+                  alt="Dr. Shifa Yadav Clinic"
+                  fill
+                  className="object-contain object-left"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
             </Link>
             <p className="text-sm text-brand-text-light leading-relaxed mb-6">
               Expert clinical dermatology and aesthetic care focused on results and safety. Science-backed treatments for your skin and hair.
@@ -38,9 +44,6 @@ const Footer = () => {
                 className="w-10 h-10 rounded-full bg-brand-sand/20 flex items-center justify-center text-brand-muted hover:bg-brand-gold hover:text-white transition-all"
               >
                 <Instagram size={18} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-brand-sand/20 flex items-center justify-center text-brand-muted hover:bg-brand-gold hover:text-white transition-all">
-                <Facebook size={18} />
               </a>
             </div>
           </div>
@@ -101,16 +104,17 @@ const Footer = () => {
       </div>
       
       {/* Bottom Bar */}
-      <div className="py-8 bg-brand-cream border-t border-brand-sand">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-[10px] text-brand-muted/70 uppercase font-bold tracking-[.1em]">
-            © 2026 Dr. Shifa Yadav Dermatology Clinic. Clinical Excellence Guaranteed.
+      <div className="py-8 mb-[70px] md:mb-0 bg-brand-cream border-t border-brand-sand">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+          <p id="desktopcopyright" className="text-[10px] text-brand-muted/70 uppercase font-bold tracking-[.1em]">
+            © 2026 Dr. Shifa Yadav Dermatology Clinic
           </p>
-          <div className="flex space-x-8 text-[10px] text-brand-muted/70 uppercase font-bold tracking-[.1em]">
-            <Link href="#" className="hover:text-brand-gold transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-brand-gold transition-colors">Terms of Care</Link>
-            <Link href="#" className="hover:text-brand-gold transition-colors">Patient Portal</Link>
-          </div>
+          <p id="desktopdeveloper" className="text-[9px] md:text-[10px] text-brand-muted/75 md:text-brand-muted/70 uppercase font-bold tracking-[.1em] mt-2.5 md:mt-0">
+            Developed by <a id="clickable" href="https://stilldesign.in" target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold transition-colors">
+              <span className="md:hidden">StillDesign.in</span>
+              <span className="hidden md:inline">StillDesign</span>
+            </a>
+          </p>
         </div>
       </div>
     </footer>

@@ -79,11 +79,20 @@ const BookAppointmentPage = () => {
 
   type TreatmentCategory = keyof typeof treatmentCategories;
 
+  const today = new Date().toISOString().split('T')[0];
+  const currentTime = new Date().toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' });
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const { name, phone, category, treatment, date, time, message } = formData;
     
     if (!name || !phone || !treatment || !date || !time) return;
+
+    // Additional validation for today's past time
+    if (date === today && time < currentTime) {
+      alert("Please select a future time for today.");
+      return;
+    }
 
     const professionalMessage = `Hello Dr. Shifa Yadav Clinic,\n\n` +
       `I would like to book a consultation appointment.\n\n` +
@@ -251,6 +260,7 @@ const BookAppointmentPage = () => {
                             type="date" 
                             name="date"
                             required 
+                            min={today}
                             onChange={handleChange}
                             className="w-full bg-brand-cream/30 border border-brand-sand/50 rounded-2xl p-4 focus:outline-none focus:border-brand-gold transition-colors font-medium"
                           />
@@ -262,6 +272,7 @@ const BookAppointmentPage = () => {
                           type="time" 
                           name="time"
                           required 
+                          min={formData.date === today ? currentTime : undefined}
                           onChange={handleChange}
                           className="w-full bg-brand-cream/30 border border-brand-sand/50 rounded-2xl p-4 focus:outline-none focus:border-brand-gold transition-colors font-medium"
                         />

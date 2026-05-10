@@ -57,9 +57,9 @@ const Counter = ({ value, label, icon: Icon }: { value: string, label: string, i
 
 export default function AboutPage() {
   const stats = [
-    { label: "Happy Patients", value: "3200+", icon: Users },
+    { label: "Happy Patients", value: "4500+", icon: Users },
     { label: "Advanced Methods", value: "50+", icon: Microscope },
-    { label: "Years Experience", value: "8+", icon: Award },
+    { label: "Years Experience", value: "13+", icon: Award },
     { label: "Personalized Care", value: "100%", icon: Heart },
   ];
 

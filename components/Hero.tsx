@@ -62,7 +62,7 @@ const Hero = () => {
               {[
                 { title: "Certified", desc: "Expert Dermatologist" },
                 { title: "Clinical", desc: "Science-Backed" },
-                { title: "Proven", desc: "10,000+ Patients" },
+                { title: "Proven", desc: "4500+ Patients" },
                 { title: "Medalist", desc: "MD Gold Medalist" }
               ].map((badge, i) => (
                 <div key={i} className="flex flex-col items-center lg:items-start text-center lg:text-left">

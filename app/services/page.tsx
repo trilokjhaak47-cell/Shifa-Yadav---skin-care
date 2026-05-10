@@ -40,6 +40,7 @@ const categories = [
         title: "Melasma Treatment", 
         desc: "Target deep pigmentation for an even skin tone.",
         tags: ["✔ Targeted", "✔ Real Results"],
+        badges: ["✔ Q Switch Laser", "✔ Mesotherapy"],
         details: {
           overview: "Advanced topical formulations combined with gentle clinical procedures to suppress melanin production.",
           results: "Visible lightening of dark patches and overall radiance.",
@@ -74,6 +75,16 @@ const categories = [
           overview: "Patch testing and blood work to identify triggers combined with antihistamine therapy.",
           results: "Relief from chronic itching and hives.",
           duration: "Initial assessment plus follows-ups as needed."
+        }
+      },
+      { 
+        title: "Advanced Biological Therapy", 
+        desc: "Targeted biologic treatments for severe chronic inflammatory and allergic skin conditions.",
+        tags: ["✔ Advanced Care", "✔ Chronic Conditions"],
+        details: {
+          overview: "Personalized biologic therapies designed to control severe inflammatory skin diseases resistant to conventional treatments.",
+          results: "Reduced flare-ups, inflammation, and improved long-term skin stability.",
+          duration: "Long-term management with scheduled monitoring and follow-ups."
         }
       },
     ]
@@ -134,6 +145,7 @@ const categories = [
         title: "Tattoo Removal", 
         desc: "Safe pigment shattering for effective ink removal.",
         tags: ["✔ Q-Switch", "✔ Minimal Scarring"],
+        badges: ["✔ Q Switch Laser"],
         details: {
           overview: "Light energy breaks down ink particles which are then naturally eliminated by the body.",
           results: "Progressive fading of multi-colored tattoos.",
@@ -282,14 +294,14 @@ const categories = [
   }
 ];
 
-const ServiceCard = ({ title, desc, tags, details }: { title: string, desc: string, tags?: string[], details?: any }) => {
+const ServiceCard = ({ title, desc, tags, badges, details }: { title: string, desc: string, tags?: string[], badges?: string[], details?: any }) => {
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
 
   return (
     <motion.div 
       layout
       whileHover={!isDetailsOpen ? { y: -5 } : {}}
-      className={`bg-white p-6 rounded-2xl border transition-all duration-300 flex flex-col h-full ${isDetailsOpen ? 'border-brand-gold shadow-xl' : 'border-brand-sand/50 shadow-sm hover:shadow-xl hover:shadow-brand-sand/30'}`}
+      className={`bg-white p-6 rounded-2xl border transition-all duration-300 flex flex-col h-full ${isDetailsOpen ? 'border-brand-gold shadow-xl' : 'border-brand-sand/50 shadow-sm hover:shadow-xl hover:shadow-brand-sand/30'} min-h-[230px] md:min-h-0`}
     >
       <div className="flex justify-between items-center w-full mb-4">
         <div className="shrink-0 w-8 h-8 rounded-lg bg-brand-cream/50 flex items-center justify-center text-brand-gold">
@@ -309,6 +321,20 @@ const ServiceCard = ({ title, desc, tags, details }: { title: string, desc: stri
       <div className="flex-grow flex flex-col">
         <h4 className="text-brand-dark font-bold text-lg">{title}</h4>
         <p className="text-brand-text-light text-sm leading-relaxed mb-4">{desc}</p>
+        
+        {/* Premium Highlight Badges */}
+        {badges && badges.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-4">
+            {badges.map((badge, i) => (
+              <span 
+                key={i} 
+                className="text-[9px] font-bold text-brand-gold bg-brand-gold/5 border border-brand-gold/20 px-3 py-1 rounded-full flex items-center gap-1 shadow-sm"
+              >
+                {badge}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
       
       <AnimatePresence>
