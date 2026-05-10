@@ -32,10 +32,11 @@ const ContactPage = () => {
     
     if (!name || !phone) return;
 
-    const professionalMessage = `New Contact Message\n\n` +
+    const professionalMessage = `Hello Dr. Shifa Yadav Clinic,\n\n` +
+      `I would like to get in touch regarding a consultation.\n\n` +
       `Name: ${name}\n` +
-      `Phone: ${phone}\n` +
-      `Message: ${message}`;
+      `Phone Number: ${phone}\n\n` +
+      `Message:\n${message || 'No additional message.'}`;
 
     const encodedMessage = encodeURIComponent(professionalMessage);
     const whatsappUrl = `https://wa.me/919910195029?text=${encodedMessage}`;

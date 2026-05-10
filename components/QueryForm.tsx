@@ -17,9 +17,10 @@ const QueryForm = () => {
     
     if (!name || !message) return;
 
-    const professionalMessage = `New Inquiry from Website\n\n` +
-      `Name: ${name}\n` +
-      `Message: ${message}`;
+    const professionalMessage = `Hello Dr. Shifa Yadav Clinic,\n\n` +
+      `I have a query regarding your treatments/services.\n\n` +
+      `Name: ${name}\n\n` +
+      `Message:\n${message}`;
 
     const encodedMessage = encodeURIComponent(professionalMessage);
     const whatsappUrl = `https://wa.me/919910195029?text=${encodedMessage}`;

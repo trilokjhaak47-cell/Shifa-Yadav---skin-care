@@ -85,14 +85,15 @@ const BookAppointmentPage = () => {
     
     if (!name || !phone || !treatment || !date || !time) return;
 
-    const professionalMessage = `New Appointment Request\n\n` +
+    const professionalMessage = `Hello Dr. Shifa Yadav Clinic,\n\n` +
+      `I would like to book a consultation appointment.\n\n` +
       `Name: ${name}\n` +
-      `Phone: ${phone}\n` +
+      `Phone Number: ${phone}\n` +
       `Category: ${category}\n` +
       `Treatment: ${treatment}\n` +
-      `Date: ${date}\n` +
-      `Time: ${time}\n` +
-      `Message: ${message}`;
+      `Preferred Date: ${date}\n` +
+      `Preferred Time: ${time}\n\n` +
+      `Message:\n${message || 'No additional message.'}`;
 
     const encodedMessage = encodeURIComponent(professionalMessage);
     const whatsappUrl = `https://wa.me/919910195029?text=${encodedMessage}`;
