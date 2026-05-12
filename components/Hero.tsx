@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { ShieldCheck, Sparkles, CheckCircle2, Phone } from 'lucide-react';
+import { ShieldCheck, Sparkles, CheckCircle2, Phone, MessageCircle } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -46,14 +46,14 @@ const Hero = () => {
                   <span className="text-xl">→</span>
                 </motion.button>
               </Link>
-              <a href="tel:+919910195029">
+              <a href="#consult-section">
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="w-full sm:w-auto px-8 py-4 bg-white/50 text-brand-gold border border-brand-gold rounded-full font-bold text-lg shadow-lg hover:bg-brand-cream transition-all cursor-pointer flex items-center justify-center gap-3"
                 >
-                  <Phone size={20} />
-                  <span>Free Consultation</span>
+                  <MessageCircle size={20} />
+                  <span>Consult Now</span>
                 </motion.button>
               </a>
             </div>

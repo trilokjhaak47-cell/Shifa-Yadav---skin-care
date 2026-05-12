@@ -29,7 +29,7 @@ const QueryForm = () => {
   };
 
   return (
-    <section className="py-24 relative overflow-hidden min-h-[600px] flex items-center">
+    <section id="consult-section" className="py-24 relative overflow-hidden min-h-[600px] flex items-center">
       {/* Background Image & Overlay */}
       <div className="absolute inset-0 z-0">
         <Image 
