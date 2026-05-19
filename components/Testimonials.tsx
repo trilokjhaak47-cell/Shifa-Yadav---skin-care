@@ -22,7 +22,7 @@ const Testimonials = () => {
         {/* Elfsight Widget */}
         <div className="min-h-[400px]">
           <Script src="https://elfsightcdn.com/platform.js" strategy="lazyOnload" />
-          <div className="elfsight-app-750d0fed-7012-40fa-9837-e375a8285c17" data-elfsight-app-lazy></div>
+          <div className="elfsight-app-2668215d-080b-4970-a097-8b3de79deb8e" data-elfsight-app-lazy></div>
         </div>
       </div>
     </section>
