@@ -110,7 +110,7 @@ const Footer = () => {
             © 2026 Dr. Shifa Yadav Dermatology Clinic
           </p>
           <p id="desktopdeveloper" className="text-[9px] md:text-[10px] text-brand-muted/75 md:text-brand-muted/70 uppercase font-bold tracking-[.1em] mt-2.5 md:mt-0">
-            Developed by <a id="clickable" href="https://stilldesign.in" target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold transition-colors">
+            Developed by <a id="clickable" href="https://stilldesign.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold transition-colors">
               <span className="md:hidden">StillDesign.in</span>
               <span className="hidden md:inline">StillDesign</span>
             </a>
