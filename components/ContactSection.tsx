@@ -34,7 +34,7 @@ const ContactSection = () => {
       icon: <Clock size={22} />, 
       label: "Clinic Timings", 
       value: "Sun: 12 – 4 PM | Mon: 4 – 7 PM", 
-      subValue: "Tue, Thu: 4 – 7 PM | Wed, Fri, Sat: Closed",
+      subValue: "Tue, Thu, Fri: 4 – 7 PM | Wed, Sat: Closed",
       description: "Consultations Available by Prior Appointment Only"
     }
   ];

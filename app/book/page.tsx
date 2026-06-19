@@ -378,8 +378,8 @@ const BookAppointmentPage = () => {
                     <div>
                       <h4 className="text-xs uppercase font-bold tracking-widest text-brand-muted mb-1">Clinic Timings</h4>
                       <p className="text-lg font-bold text-brand-brown">Sun: 12 – 4 PM</p>
-                      <p className="text-lg font-bold text-brand-brown">Mon, Tue, Thu: 4 – 7 PM</p>
-                      <p className="text-sm text-brand-text-light italic">Wed, Fri, Sat: Clinic Closed</p>
+                      <p className="text-lg font-bold text-brand-brown">Mon, Tue, Thu, Fri: 4 – 7 PM</p>
+                      <p className="text-sm text-brand-text-light italic">Wed, Sat: Clinic Closed</p>
                       <div className="mt-4 flex items-center space-x-2 text-[10px] font-bold text-brand-gold uppercase tracking-wider">
                         <Calendar size={12} strokeWidth={2.5} />
                         <span>Consultations Available by Prior Appointment Only</span>

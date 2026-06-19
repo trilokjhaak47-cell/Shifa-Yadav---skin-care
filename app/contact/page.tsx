@@ -138,11 +138,11 @@ const ContactPage = () => {
                           <span className="text-sm font-bold text-brand-gold">12:00 PM – 4:00 PM</span>
                         </div>
                         <div className="flex justify-between items-center w-64 md:w-72">
-                          <span className="text-sm font-bold text-brand-brown">Mon, Tue, Thu</span>
+                          <span className="text-sm font-bold text-brand-brown">Mon, Tue, Thu, Fri</span>
                           <span className="text-sm font-bold text-brand-gold">4:00 PM – 7:00 PM</span>
                         </div>
                         <div className="flex justify-between items-center w-64 md:w-72 opacity-50">
-                          <span className="text-xs font-medium text-brand-muted">Wed, Fri, Sat</span>
+                          <span className="text-xs font-medium text-brand-muted">Wed, Sat</span>
                           <span className="text-xs font-medium text-brand-muted">Closed</span>
                         </div>
                       </div>

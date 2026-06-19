@@ -77,8 +77,11 @@ const Footer = () => {
                 <li className="flex justify-between border-b border-brand-sand pb-1.5">
                   <span>Thu</span> <span className="text-brand-gold">4 – 7 PM</span>
                 </li>
+                <li className="flex justify-between border-b border-brand-sand pb-1.5">
+                  <span>Fri</span> <span className="text-brand-gold">4 – 7 PM</span>
+                </li>
                 <li className="flex justify-between opacity-40">
-                  <span>Wed, Fri, Sat</span> <span>Closed</span>
+                  <span>Wed, Sat</span> <span>Closed</span>
                 </li>
               </ul>
               <div className="mt-6 flex items-center space-x-2 text-[10px] font-bold text-brand-gold uppercase tracking-wider">
