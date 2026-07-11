@@ -36,6 +36,76 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                // 1. Resolve fetch read-only getter error in sandbox
+                try {
+                  var originalFetch = window.fetch;
+                  var localFetch = originalFetch;
+                  Object.defineProperty(window, 'fetch', {
+                    get: function() { return localFetch; },
+                    set: function(v) { localFetch = v; },
+                    configurable: true,
+                    enumerable: true
+                  });
+                } catch (e1) {
+                  try {
+                    var proto = Object.getPrototypeOf(window);
+                    var originalFetchProto = window.fetch;
+                    var localFetchProto = originalFetchProto;
+                    Object.defineProperty(proto, 'fetch', {
+                      get: function() { return localFetchProto; },
+                      set: function(v) { localFetchProto = v; },
+                      configurable: true,
+                      enumerable: true
+                    });
+                  } catch (e2) {
+                    console.warn('Failed to patch fetch:', e2);
+                  }
+                }
+
+                // 2. Resolve ResizeObserver loop error
+                try {
+                  if (window.ResizeObserver) {
+                    var OriginalResizeObserver = window.ResizeObserver;
+                    window.ResizeObserver = function PatchedResizeObserver(callback) {
+                      return new OriginalResizeObserver(function(entries, observer) {
+                        window.requestAnimationFrame(function() {
+                          try {
+                            callback(entries, observer);
+                          } catch (err) {}
+                        });
+                      });
+                    };
+                    window.ResizeObserver.prototype = OriginalResizeObserver.prototype;
+                  }
+                } catch (e3) {
+                  console.warn('Failed to patch ResizeObserver:', e3);
+                }
+
+                // 3. Global listener to suppress remaining ResizeObserver events
+                try {
+                  window.addEventListener('error', function(e) {
+                    var msg = e.message || '';
+                    if (
+                      msg.indexOf('ResizeObserver') > -1 ||
+                      msg.indexOf('loop limit exceeded') > -1 ||
+                      msg.indexOf('loop completed with undelivered notifications') > -1
+                    ) {
+                      if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+                      if (e.stopPropagation) e.stopPropagation();
+                      if (e.preventDefault) e.preventDefault();
+                    }
+                  });
+                } catch (e4) {}
+              })();
+            `
+          }}
+        />
+      </head>
       <body suppressHydrationWarning className="font-sans antialiased bg-brand-cream text-brand-text">
         <ResizeObserverFix />
         {children}
