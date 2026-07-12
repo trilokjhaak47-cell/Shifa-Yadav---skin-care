@@ -16,20 +16,24 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Dr. Shifa Yadav | Dermatology Clinic',
-  description: 'Expert dermatology treatments for acne, pigmentation, hair fall, and more — guided by Dr. Shifa Yadav.',
+  metadataBase: new URL('https://shifayadav.com'),
+  alternates: {
+    canonical: 'https://shifayadav.com',
+  },
+  title: 'Dr. Shifa Yadav | Best Dermatologist & Skin Specialist in Gurgaon',
+  description: 'Consult Dr. Shifa Yadav, MD Gold Medalist and experienced dermatologist in Gurgaon with 13+ years of expertise in acne treatment, pigmentation, hair fall, laser hair removal, and anti-aging treatments. Book your appointment today.',
   icons: {
     icon: 'https://res.cloudinary.com/dvfhhtrlw/image/upload/v1778442924/Untitled_design_7_zwzer1.png',
   },
   openGraph: {
-    title: 'Dr. Shifa Yadav | Dermatology Clinic',
-    description: 'Expert dermatology treatments for acne, pigmentation, hair fall, and more — guided by Dr. Shifa Yadav.',
+    title: 'Dr. Shifa Yadav | Best Dermatologist & Skin Specialist in Gurgaon',
+    description: 'Consult Dr. Shifa Yadav, MD Gold Medalist and experienced dermatologist in Gurgaon with 13+ years of expertise in acne treatment, pigmentation, hair fall, laser hair removal, and anti-aging treatments. Book your appointment today.',
     images: ['https://res.cloudinary.com/dvfhhtrlw/image/upload/v1778443391/Untitled_design_8_oienft.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dr. Shifa Yadav | Dermatology Clinic',
-    description: 'Expert dermatology treatments for acne, pigmentation, hair fall, and more — guided by Dr. Shifa Yadav.',
+    title: 'Dr. Shifa Yadav | Best Dermatologist & Skin Specialist in Gurgaon',
+    description: 'Consult Dr. Shifa Yadav, MD Gold Medalist and experienced dermatologist in Gurgaon with 13+ years of expertise in acne treatment, pigmentation, hair fall, laser hair removal, and anti-aging treatments. Book your appointment today.',
     images: ['https://res.cloudinary.com/dvfhhtrlw/image/upload/v1778443391/Untitled_design_8_oienft.png'],
   },
 };
@@ -133,6 +137,135 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
               fbq('init', '1549700693460062');
               fbq('track', 'PageView');
             `,
+          }}
+        />
+        <Script
+          id="structured-data"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "MedicalClinic",
+                  "@id": "https://shifayadav.com/#clinic",
+                  "name": "Dr. Shifa Yadav Dermatology Clinic",
+                  "url": "https://shifayadav.com",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1778438049/IMG_7269_mmhoxq.png"
+                  },
+                  "image": "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1778438049/IMG_7269_mmhoxq.png",
+                  "telephone": "+91 9910195029",
+                  "email": "drshifayadav@gmail.com",
+                  "hasMap": "https://www.google.com/maps/place/Dr.+Shifa+Yadav+skin,+hair,+nail+specialist/@28.4793142,77.0608412,17z/data=!3m1!4b1!4m6!3m5!1s0x390d196376f502f1:0xa961d3479a2d03ba!8m2!3d28.4793142!4d77.0634161!16s%2Fg%2F11z63120hk",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "House No. 764, Sector 17A, Sector 17",
+                    "addressLocality": "Gurugram",
+                    "addressRegion": "Haryana",
+                    "postalCode": "122001",
+                    "addressCountry": "IN"
+                  },
+                  "openingHoursSpecification": [
+                    {
+                      "@type": "OpeningHoursSpecification",
+                      "dayOfWeek": ["Monday", "Tuesday", "Friday"],
+                      "opens": "16:00",
+                      "closes": "19:00"
+                    },
+                    {
+                      "@type": "OpeningHoursSpecification",
+                      "dayOfWeek": ["Sunday"],
+                      "opens": "12:00",
+                      "closes": "16:00"
+                    }
+                  ],
+                  "medicalSpecialty": "Dermatology",
+                  "sameAs": [
+                    "https://www.instagram.com/dermshifayadav/"
+                  ],
+                  "employee": {
+                    "@id": "https://shifayadav.com/#physician"
+                  }
+                },
+                {
+                  "@type": "Physician",
+                  "@id": "https://shifayadav.com/#physician",
+                  "name": "Dr. Shifa Yadav",
+                  "url": "https://shifayadav.com",
+                  "image": "https://res.cloudinary.com/dvfhhtrlw/image/upload/v1778066868/photo_2026-05-06_16-57-32_rogfdm.jpg",
+                  "telephone": "+91 9910195029",
+                  "email": "drshifayadav@gmail.com",
+                  "worksFor": {
+                    "@id": "https://shifayadav.com/#clinic"
+                  },
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "House No. 764, Sector 17A, Sector 17",
+                    "addressLocality": "Gurugram",
+                    "addressRegion": "Haryana",
+                    "postalCode": "122001",
+                    "addressCountry": "IN"
+                  },
+                  "medicalSpecialty": [
+                    "Dermatology",
+                    "Cosmetology"
+                  ],
+                  "knowsAbout": [
+                    "Dermatology",
+                    "Cosmetology",
+                    "Skin Specialist",
+                    "Hair Specialist",
+                    "Laser Specialist"
+                  ],
+                  "alumniOf": {
+                    "@type": "CollegeOrUniversity",
+                    "name": "Mahatma Gandhi Medical College, Jaipur"
+                  },
+                  "qualification": [
+                    {
+                      "@type": "EducationalOccupationalCredential",
+                      "credentialCategory": "degree",
+                      "name": "MBBS"
+                    },
+                    {
+                      "@type": "EducationalOccupationalCredential",
+                      "credentialCategory": "degree",
+                      "name": "MD Dermatology"
+                    }
+                  ],
+                  "memberOf": [
+                    {
+                      "@type": "Organization",
+                      "name": "IADVL"
+                    },
+                    {
+                      "@type": "Organization",
+                      "name": "PDS"
+                    },
+                    {
+                      "@type": "Organization",
+                      "name": "ACSI"
+                    }
+                  ],
+                  "affiliation": [
+                    {
+                      "@type": "Organization",
+                      "name": "Kaya Clinic"
+                    },
+                    {
+                      "@type": "Organization",
+                      "name": "Artemis Hospital"
+                    }
+                  ],
+                  "sameAs": [
+                    "https://www.instagram.com/dermshifayadav/"
+                  ]
+                }
+              ]
+            })
           }}
         />
         <ResizeObserverFix />
