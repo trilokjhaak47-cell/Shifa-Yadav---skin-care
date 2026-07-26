@@ -89,12 +89,12 @@ const TechSection = () => {
             >
               {/* Image side */}
               <motion.div 
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 className="w-full lg:w-1/2 relative group"
               >
-                <div className={`absolute -inset-4 ${item.bgColor} rounded-[2.5rem] -z-10 transition-transform group-hover:scale-105 duration-700 shadow-inner`} />
+                <div className={`absolute inset-0 sm:-inset-4 ${item.bgColor} rounded-[2.5rem] -z-10 transition-transform group-hover:scale-105 duration-700 shadow-inner`} />
                 <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl shadow-brand-sand/20 border border-brand-sand/30">
                   <Image 
                     src={item.image}
@@ -108,8 +108,8 @@ const TechSection = () => {
 
               {/* Text side */}
               <motion.div 
-                initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 className="w-full lg:w-1/2"
               >

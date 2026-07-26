@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-brand-cream lg:bg-transparent">
+    <section className="relative min-h-screen flex items-center pt-[50px] sm:pt-16 lg:pt-20 overflow-hidden bg-brand-cream lg:bg-transparent">
       {/* Background soft shapes */}
       <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-brand-sand/30 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-white rounded-full blur-3xl -z-10" />
@@ -16,10 +16,10 @@ const Hero = () => {
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-stretch">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="lg:col-span-8 flex flex-col justify-center py-12 lg:py-24"
+            className="lg:col-span-8 flex flex-col justify-center py-6 sm:py-12 lg:py-24"
           >
             <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white border border-brand-sand text-brand-muted font-bold text-[10px] mb-8 w-fit">
               <span className="w-2 h-2 bg-brand-gold rounded-full animate-pulse"></span>
@@ -27,12 +27,18 @@ const Hero = () => {
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-brand-dark leading-[1.1] mb-8">
-              Clear Skin Starts With <br/>
-              <span className="text-brand-gold italic">Science-Backed</span> Care
+              Expert <span className="text-brand-gold italic">Dermatology</span>
+              <br className="md:hidden" />
+              {' '}Care{' '}
+              <span className="md:hidden">by</span>
+              <br className="hidden md:block" />
+              <br className="md:hidden" />
+              <span className="hidden md:inline">by </span>
+              <span className="text-brand-gold italic">Dr. Shifa Yadav</span>
             </h1>
             
             <p className="text-lg md:text-xl text-brand-text-light mb-10 max-w-xl leading-relaxed">
-              Get expert dermatology treatments for acne, pigmentation, hair fall, and more — guided by Dr. Shifa Yadav’s personalized approach.
+              MD Dermatology Gold Medalist with 13+ years of experience providing personalized treatments for acne, pigmentation, hair fall, laser procedures, and advanced skin care in Gurgaon.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -42,7 +48,7 @@ const Hero = () => {
                   whileTap={{ scale: 0.98 }}
                   className="w-full sm:w-auto px-8 py-4 bg-brand-gold text-white rounded-full font-bold text-lg shadow-xl shadow-brand-gold/30 hover:bg-brand-brown transition-all cursor-pointer flex items-center justify-center gap-2"
                 >
-                  <span>Start Your Transformation</span>
+                  <span>Book Appointment</span>
                   <span className="text-xl">→</span>
                 </motion.button>
               </Link>
@@ -87,7 +93,7 @@ const Hero = () => {
             <div className="relative w-full h-full lg:absolute lg:inset-0 z-0">
                <Image 
                 src="https://res.cloudinary.com/dvfhhtrlw/image/upload/v1778066868/photo_2026-05-06_16-57-32_rogfdm.jpg" 
-                alt="Dr. Shifa Yadav" 
+                alt="Dr. Shifa Yadav - Dermatologist in Gurgaon" 
                 fill
                 className="object-cover"
                 referrerPolicy="no-referrer"
@@ -103,7 +109,10 @@ const Hero = () => {
               className="absolute bottom-8 left-8 right-8 bg-white/90 p-5 md:p-8 rounded-2xl border border-brand-sand backdrop-blur-md shadow-2xl z-20"
             >
               <h3 className="font-serif text-xl md:text-2xl font-bold text-brand-brown">Dr. Shifa Yadav</h3>
-              <p className="text-[10px] md:text-xs text-brand-muted uppercase tracking-widest mt-1 font-bold">Lead Dermatologist & Aesthetician</p>
+              <p className="text-[10px] md:text-xs text-brand-muted uppercase tracking-widest mt-1 font-bold">
+                Senior Dermatologist<br />
+                MD Dermatology • Gold Medalist
+              </p>
               <div className="h-[1px] bg-brand-sand my-3 md:my-4" />
               <p className="text-[11px] md:text-xs leading-relaxed italic text-brand-text-light">
                 &quot;My mission is to provide clinically-proven, personalized care that actually works for my patients.&quot;

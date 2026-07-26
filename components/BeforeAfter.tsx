@@ -51,7 +51,7 @@ const BeforeAfter = () => {
     <section id="results" className="py-24 bg-brand-dark text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-24">
-          <p className="text-brand-gold font-bold tracking-[.4em] uppercase text-2xl md:text-5xl lg:text-6xl mb-8">Real Results</p>
+          <p className="text-brand-gold font-bold tracking-[.2em] sm:tracking-[.4em] uppercase text-2xl md:text-5xl lg:text-6xl mb-8">Real Results</p>
           <h2 className="text-2xl md:text-3xl font-serif font-medium text-white/70 mb-6 tracking-tight">Patient Transformations</h2>
           <p className="text-white/40 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
             Witness the science-driven changes our patients experience. Actual results from real patients under the care of Dr. Shifa Yadav.

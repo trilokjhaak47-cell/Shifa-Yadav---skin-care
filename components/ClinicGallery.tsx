@@ -92,7 +92,7 @@ const ClinicGallery = () => {
           </motion.div>
         </div>
 
-        <div className="relative group">
+        <div className="relative group overflow-hidden rounded-[2rem]">
           <div className="flex gap-4 md:gap-6">
             {!mounted ? (
               <div className="flex gap-4 md:gap-6 w-full">

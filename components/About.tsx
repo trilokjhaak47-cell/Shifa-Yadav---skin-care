@@ -30,8 +30,8 @@ const About = () => {
   const stats = [
     { label: "Happy Patients", value: 4500, suffix: "+" },
     { label: "Years Experience", value: 13, suffix: "+" },
-    { label: "Proven Methods", value: "Clinical", isStatic: true },
-    { label: "Skin Guidance", value: "Trusted", isStatic: true }
+    { label: "Gold Medalist", value: "MD", isStatic: true },
+    { label: "Dermatologist", value: "Certified", isStatic: true }
   ];
 
   return (
@@ -55,7 +55,7 @@ const About = () => {
           </p>
           <div className="h-[1px] w-24 bg-brand-gold mx-auto mb-8" />
           <p className="text-lg text-brand-text-light leading-relaxed max-w-3xl mx-auto">
-            Dr. Shifa Yadav is a qualified dermatologist dedicated to providing safe, effective, and personalized skincare solutions. With a strong focus on science-backed treatments, she helps patients overcome acne, pigmentation, hair fall, and other skin concerns with confidence.
+            Dr. Shifa Yadav is an MD Dermatology Gold Medalist with over 13 years of experience in clinical and aesthetic dermatology. She currently serves as a Senior Dermatologist at Artemis Hospital and Kaya Skin Clinic, helping patients achieve healthier skin through personalized treatments for acne, pigmentation, hair disorders, laser procedures, and advanced skin care.
           </p>
         </motion.div>
 

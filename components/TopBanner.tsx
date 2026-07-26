@@ -9,7 +9,7 @@ const TopBanner = () => {
   return (
     <Link 
       href="/book" 
-      className="block bg-brand-sand text-brand-muted py-1.5 overflow-hidden relative z-[60] border-b border-brand-brown/5 cursor-pointer hover:opacity-95 transition-opacity"
+      className="block bg-brand-sand text-brand-muted py-1.5 overflow-hidden relative z-[60] border-b border-brand-brown/5 cursor-pointer hover:opacity-95 transition-opacity w-full max-w-full"
     >
       <motion.div 
         animate={{ x: [0, -1200] }}

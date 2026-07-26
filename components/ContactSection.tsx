@@ -70,8 +70,8 @@ const ContactSection = () => {
           
           {/* Left Column: Contact Info */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="lg:col-span-5 space-y-8 flex flex-col justify-center"
           >
@@ -133,8 +133,8 @@ const ContactSection = () => {
 
           {/* Right Column: Google Map */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="lg:col-span-7"
           >
