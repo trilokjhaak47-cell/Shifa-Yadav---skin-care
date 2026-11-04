@@ -4,6 +4,7 @@ import Script from 'next/script';
 import './globals.css';
 import FloatingCTA from '@/components/FloatingCTA';
 import ResizeObserverFix from '@/components/ResizeObserverFix';
+import MetaPixelTracker from '@/components/MetaPixelTracker';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -17,9 +18,6 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://shifayadav.com'),
-  alternates: {
-    canonical: 'https://shifayadav.com',
-  },
   title: 'Dr. Shifa Yadav | Best Dermatologist & Skin Specialist in Gurgaon',
   description: 'Consult Dr. Shifa Yadav, MD Gold Medalist and experienced dermatologist in Gurgaon with 13+ years of expertise in acne treatment, pigmentation, hair fall, laser hair removal, and anti-aging treatments. Book your appointment today.',
   icons: {
@@ -135,10 +133,10 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
               s.parentNode.insertBefore(t,s)}(window, document,'script',
               'https://connect.facebook.net/en_US/fbevents.js');
               fbq('init', '1549700693460062');
-              fbq('track', 'PageView');
             `,
           }}
         />
+        <MetaPixelTracker />
         <Script
           id="structured-data"
           type="application/ld+json"
